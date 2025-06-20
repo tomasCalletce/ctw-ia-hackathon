@@ -65,7 +65,7 @@ export function HeroSection() {
             </p>
             <div className="flex items-center space-x-4 group">
               <div
-                className="w-16 h-1 rounded-full"
+                className="w-8 h-1 rounded-full"
                 style={{ backgroundColor: "#FFDA35" }}
               />
               <span
