@@ -41,8 +41,8 @@ export function HeroSection() {
         />
       </div>
       <div className="container mx-auto px-8 lg:px-12 h-full flex items-center relative z-10">
-        <div className="w-full lg:w-1/2 lg:pr-16 space-y-8">
-          <div className="group">
+        <div className="w-full lg:w-1/2 lg:pr-16">
+          <div className="group mb-8">
             <Image
               src="/logo.svg"
               alt="Colombia Tech Fest Logo"
@@ -52,9 +52,9 @@ export function HeroSection() {
               priority
             />
           </div>
-          <div className="space-y-6">
+          <div className="mb-12">
             <p
-              className="text-xl lg:text-xl xl:text-2xl leading-relaxed font-light tracking-wide"
+              className="text-xl lg:text-xl xl:text-2xl leading-relaxed font-light tracking-wide mb-6"
               style={{ color: "#666666" }}
             >
               Únete a la plataforma de{" "}
@@ -76,7 +76,7 @@ export function HeroSection() {
               </span>
             </div>
           </div>
-          <div className="pt-12">
+          <div className="pt-4">
             <div className="flex flex-col space-y-4">
               <p
                 className="text-xs uppercase tracking-[0.2em] font-medium opacity-60"
