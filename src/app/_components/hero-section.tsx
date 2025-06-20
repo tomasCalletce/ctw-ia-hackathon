@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Badge3D from "~/app/_components/3d-badge";
 
 export function HeroSection() {
   return (
@@ -96,14 +97,9 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex w-1/2 h-full items-center justify-center">
-          <div className="relative w-full h-96 flex items-center justify-center">
-            <div
-              className="relative z-10 text-8xl opacity-20 animate-pulse"
-              style={{ color: "#FFDA35" }}
-            >
-              ⚡
-            </div>
+        <div className="hidden lg:flex w-1/2 h-screen items-center justify-center">
+          <div className="relative w-full h-full flex items-center justify-center">
+            <Badge3D />
           </div>
         </div>
       </div>
