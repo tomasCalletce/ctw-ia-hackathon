@@ -31,6 +31,13 @@ declare global {
   }
 }
 
+useGLTF.preload(
+  "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb"
+);
+useTexture.preload(
+  "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg"
+);
+
 export default function App() {
   const { debug } = useControls({ debug: false });
   return (
@@ -84,7 +91,6 @@ interface BandProps {
 }
 
 function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
-  // Properly typed refs
   const band = useRef<any>(null);
   const fixed = useRef<any>(null);
   const j1 = useRef<any>(null);
@@ -92,7 +98,6 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   const j3 = useRef<any>(null);
   const card = useRef<any>(null);
 
-  // Vector helpers
   const vec = new THREE.Vector3();
   const ang = new THREE.Vector3();
   const rot = new THREE.Vector3();
@@ -125,7 +130,6 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
       ])
   );
 
-  // Proper drag state typing
   const [dragged, drag] = useState<false | THREE.Vector3>(false);
   const [hovered, hover] = useState(false);
 
