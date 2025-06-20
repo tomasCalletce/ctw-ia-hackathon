@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Badge3D from "~/app/_components/3d-badge";
+import { BadgeForm } from "~/components/badge-form";
 
 export function HeroSection() {
   return (
@@ -53,6 +54,7 @@ export function HeroSection() {
               priority
             />
           </div>
+
           <div className="mb-12">
             <p
               className="text-xl lg:text-xl xl:text-2xl leading-relaxed font-light tracking-wide mb-6"
@@ -64,6 +66,9 @@ export function HeroSection() {
               </span>{" "}
               de la región.
             </p>
+            <div className="mb-8">
+              <BadgeForm />
+            </div>
             <div className="flex items-center space-x-4 group">
               <div
                 className="w-8 h-1 rounded-full"
