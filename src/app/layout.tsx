@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Footer } from "~/components/footer";
 
 export const metadata: Metadata = {
   title: "IA HACKATHON",
