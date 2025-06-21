@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState, useRef } from "react";
-
+import { DialogDescription } from "@radix-ui/react-dialog";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import {
@@ -24,8 +24,14 @@ import {
 import { Linkedin } from "lucide-react";
 
 const badgeSchema = z.object({
-  name: z.string().min(1, "Name is required").max(20, "Name too long"),
-  role: z.string().min(1, "Role is required").max(20, "Role too long"),
+  name: z
+    .string()
+    .min(1, "El nombre es obligatorio")
+    .max(20, "Nombre demasiado largo"),
+  role: z
+    .string()
+    .min(1, "El rol es obligatorio")
+    .max(20, "Rol demasiado largo"),
 });
 
 type BadgeForm = z.infer<typeof badgeSchema>;
@@ -98,40 +104,37 @@ export function BadgeForm() {
     <>
       <canvas ref={canvasRef} style={{ display: "none" }} />
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl  border border-gray-200">
+        <DialogContent
+          className="max-w-2xl bg-black border shadow-2xl"
+          style={{ borderColor: "#444444" }}
+        >
           <DialogHeader>
-            <DialogTitle className="text-xl font-medium text-gray-900 text-center">
-              Your Badge
+            <DialogTitle className="text-xl font-medium text-white">
+              Tu Insignia
             </DialogTitle>
+            <DialogDescription className="text-gray-300 text-sm leading-relaxed">
+              Comparte tu insignia en LinkedIn (más vale jajajajaj) para mostrar
+              que eres parte de la innovación tecnológica en LATAM.
+            </DialogDescription>
           </DialogHeader>
 
           <div className="flex flex-col items-center space-y-6 py-6">
             {badgeDataUrl && (
               <img
                 src={badgeDataUrl}
-                alt="Generated Badge"
+                alt="Insignia Generada"
                 className="max-w-full h-auto"
                 style={{ maxHeight: "350px" }}
               />
             )}
 
-            <div className="flex gap-3">
-              <Button
-                onClick={downloadBadge}
-                className="px-6 py-2 font-medium"
-                style={{ backgroundColor: "#FFDA35", color: "#000" }}
-              >
-                Download
-              </Button>
-
-              <Button
-                onClick={() => setIsOpen(false)}
-                variant="outline"
-                className="px-6 py-2 font-medium border-gray-300 text-gray-700"
-              >
-                Close
-              </Button>
-            </div>
+            <Button
+              onClick={downloadBadge}
+              className="px-6 py-2 font-medium w-full cursor-pointer"
+              style={{ backgroundColor: "#FFDA35", color: "#000" }}
+            >
+              Descargar
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
@@ -147,12 +150,12 @@ export function BadgeForm() {
                     style={{ color: "#D9D9D9" }}
                     className="text-sm font-medium"
                   >
-                    Full Name
+                    Nombre Completo
                   </FormLabel>
                   <FormControl>
                     <Input
                       {...field}
-                      placeholder="Enter your name"
+                      placeholder="Ingresa tu nombre"
                       className="bg-black/20 border-white/20 text-white placeholder:text-white/50 focus:border-yellow-400/50 focus:ring-yellow-400/20"
                       style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
                     />
@@ -171,12 +174,12 @@ export function BadgeForm() {
                     style={{ color: "#D9D9D9" }}
                     className="text-sm font-medium"
                   >
-                    Role / Title
+                    Rol / Título
                   </FormLabel>
                   <FormControl>
                     <Input
                       {...field}
-                      placeholder="e.g., AI Engineer, Developer"
+                      placeholder="ej., Ingeniero de IA, Desarrollador"
                       className="bg-black/20 border-white/20 text-white placeholder:text-white/50 focus:border-yellow-400/50 focus:ring-yellow-400/20"
                       style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
                     />
@@ -192,7 +195,7 @@ export function BadgeForm() {
               className="w-full font-medium cursor-pointer"
               style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
             >
-              Create Badge | Share on <Linkedin className="w-4 h-4" />
+              Crear Insignia | Compartir en <Linkedin className="w-4 h-4" />
             </Button>
           </form>
         </Form>
