@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Badge3D from "~/app/_components/3d-badge";
 import { BadgeForm } from "~/components/badge-form";
+import { Suspense } from "react";
 
 export function HeroSection() {
   return (
@@ -67,7 +68,9 @@ export function HeroSection() {
               de la región.
             </p>
             <div className="mb-8">
-              <BadgeForm />
+              <Suspense>
+                <BadgeForm />
+              </Suspense>
             </div>
             <div className="flex items-center space-x-4 group">
               <div
