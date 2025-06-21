@@ -9,7 +9,37 @@ export function Footer() {
           rel="noopener noreferrer"
           className="hover:text-gray-300 transition-colors underline cursor-pointer"
         >
-          tomas calle
+          tomas
+        </a>
+        {" • "}
+        design by{" "}
+        <a
+          href="https://www.linkedin.com/in/alejandra-garcia-garcia-b30000000000000000000000/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-300 transition-colors underline cursor-pointer"
+        >
+          aleja
+        </a>
+        {" • "}
+        inspiration from{" "}
+        <a
+          href="https://vercel.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-300 transition-colors underline cursor-pointer"
+        >
+          vercel.com
+        </a>
+        {" • "}
+        help from{" "}
+        <a
+          href="https://www.linkedin.com/in/cristiancamilocorrea/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-300 transition-colors underline cursor-pointer"
+        >
+          Cristian
         </a>
       </p>
     </footer>
