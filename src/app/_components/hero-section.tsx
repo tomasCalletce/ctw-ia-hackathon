@@ -22,7 +22,7 @@ export function HeroSection() {
           alt=""
           width={150}
           height={150}
-          className="transform"
+          className="transform w-16 h-16 md:w-[150px] md:h-[150px]"
         />
       </div>
       <div className="absolute bottom-0 left-0 opacity-20 animate-pulse">
@@ -31,7 +31,7 @@ export function HeroSection() {
           alt=""
           width={150}
           height={150}
-          className="transform rotate-180"
+          className="transform rotate-180 w-16 h-16 md:w-[150px] md:h-[150px]"
         />
       </div>
       <div className="absolute bottom-0 right-0 opacity-20 animate-pulse">
@@ -40,7 +40,7 @@ export function HeroSection() {
           alt=""
           width={150}
           height={150}
-          className="transform rotate-180"
+          className="transform rotate-180 w-16 h-16 md:w-[150px] md:h-[150px]"
         />
       </div>
       <div className="container mx-auto px-8 lg:px-12 h-full flex items-center relative z-10">
