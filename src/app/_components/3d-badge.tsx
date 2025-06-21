@@ -18,7 +18,6 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
-import { useControls } from "leva";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -39,7 +38,7 @@ useTexture.preload(
 );
 
 export default function App() {
-  const { debug } = useControls({ debug: false });
+  const debug = false;
   return (
     <div className="w-full h-full" style={{ backgroundColor: "transparent" }}>
       <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
