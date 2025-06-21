@@ -85,7 +85,7 @@ export function HeroSection() {
               </span>
             </div>
           </div>
-          <div className="pt-4">
+          <div>
             <div className="flex flex-col space-y-4">
               <p
                 className="text-xs uppercase tracking-[0.2em] font-medium opacity-60"
