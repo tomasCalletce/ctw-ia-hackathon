@@ -106,7 +106,9 @@ export function HeroSection() {
         </div>
         <div className="hidden lg:flex w-1/2 h-screen items-center justify-center">
           <div className="relative w-full h-full flex items-center justify-center">
-            <Badge3D />
+            <Suspense>
+              <Badge3D />
+            </Suspense>
           </div>
         </div>
       </div>

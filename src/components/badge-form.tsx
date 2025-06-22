@@ -3,8 +3,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useState, useRef } from "react";
-import { DialogDescription } from "@radix-ui/react-dialog";
+import { useQueryState, parseAsStringLiteral, parseAsString } from "nuqs";
+import { useRef, useState } from "react";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import {
@@ -15,13 +15,34 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/ui/form";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "~/components/ui/dialog";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Instagram, ArrowLeft } from "lucide-react";
+
+enum ViewState {
+  FORM = "form",
+  SHARE = "share",
+}
+
+export function BadgeForm() {
+  const [view, setView] = useQueryState(
+    "view",
+    parseAsStringLiteral(Object.values(ViewState)).withDefault(ViewState.FORM)
+  );
+
+  const onSuccess = async () => {
+    await setView(ViewState.SHARE);
+  };
+
+  const handleGoBack = () => {
+    setView(ViewState.FORM);
+  };
+
+  return (
+    <div>
+      {view === ViewState.FORM && <BadgeFormComponent onSuccess={onSuccess} />}
+      {view === ViewState.SHARE && <ShareComponent onGoBack={handleGoBack} />}
+    </div>
+  );
+}
 
 const badgeSchema = z.object({
   name: z
@@ -36,108 +57,87 @@ const badgeSchema = z.object({
 
 type BadgeForm = z.infer<typeof badgeSchema>;
 
-export function BadgeForm() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [badgeDataUrl, setBadgeDataUrl] = useState("");
+function BadgeFormComponent({ onSuccess }: { onSuccess: () => Promise<void> }) {
+  const [name, setName] = useQueryState("name", parseAsString.withDefault(""));
+  const [role, setRole] = useQueryState("role", parseAsString.withDefault(""));
   const [isGenerating, setIsGenerating] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const form = useForm<BadgeForm>({
     resolver: zodResolver(badgeSchema),
+    defaultValues: {
+      name: name,
+      role: role,
+    },
   });
 
-  const generateBadge = async (name: string, role: string) => {
-    if (!canvasRef.current) return;
+  const generateBadge = async (name: string, role: string): Promise<void> => {
+    return new Promise((resolve) => {
+      if (!canvasRef.current) {
+        resolve();
+        return;
+      }
 
-    setIsGenerating(true);
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+      setIsGenerating(true);
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        setIsGenerating(false);
+        resolve();
+        return;
+      }
 
-    // Load base image
-    const img = new Image();
-    img.crossOrigin = "anonymous";
+      // Load base image
+      const img = new Image();
+      img.crossOrigin = "anonymous";
 
-    img.onload = () => {
-      // Set canvas size
-      canvas.width = 600;
-      canvas.height = 400;
+      img.onload = () => {
+        // Set canvas size
+        canvas.width = 600;
+        canvas.height = 400;
 
-      // Draw base image
-      ctx.drawImage(img, 0, 0, 600, 400);
+        // Draw base image
+        ctx.drawImage(img, 0, 0, 600, 400);
 
-      // Draw name
-      ctx.fillStyle = "#FFFFFF";
-      ctx.font = "bold 48px Arial";
-      ctx.textAlign = "center";
-      ctx.fillText(name, 300, 200);
+        // Draw name
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "bold 48px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText(name, 300, 200);
 
-      // Draw role
-      ctx.fillStyle = "#D9D9D9";
-      ctx.font = "20px Arial";
-      ctx.fillText(role, 300, 250);
+        // Draw role
+        ctx.fillStyle = "#D9D9D9";
+        ctx.font = "20px Arial";
+        ctx.fillText(role, 300, 250);
 
-      // Get data URL and show dialog
-      setBadgeDataUrl(canvas.toDataURL("image/png"));
-      setIsOpen(true);
-      setIsGenerating(false);
-    };
+        // Download the badge
+        const dataUrl = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.download = `${name.replace(/\s+/g, "_")}_hackathon_badge.png`;
+        link.href = dataUrl;
+        link.click();
 
-    img.src = "/badge-base.svg";
-  };
+        setIsGenerating(false);
+        resolve();
+      };
 
-  const downloadBadge = () => {
-    if (!badgeDataUrl) return;
+      img.onerror = () => {
+        setIsGenerating(false);
+        resolve();
+      };
 
-    const link = document.createElement("a");
-    const formData = form.getValues();
-    link.download = `${formData.name.replace(/\s+/g, "_")}_hackathon_badge.png`;
-    link.href = badgeDataUrl;
-    link.click();
+      img.src = "/badge-base.svg";
+    });
   };
 
   const onSubmit = async (data: BadgeForm) => {
     await generateBadge(data.name, data.role);
+    await Promise.all([setName(data.name), setRole(data.role), onSuccess()]);
   };
 
   return (
     <>
       <canvas ref={canvasRef} style={{ display: "none" }} />
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent
-          className="max-w-2xl bg-black border shadow-2xl"
-          style={{ borderColor: "#444444" }}
-        >
-          <DialogHeader>
-            <DialogTitle className="text-xl font-medium text-white">
-              Tu Insignia
-            </DialogTitle>
-            <DialogDescription className="text-gray-300 text-sm leading-relaxed">
-              Comparte tu insignia en LinkedIn (más vale jajajajaj) para mostrar
-              que eres parte de la innovación tecnológica en LATAM.
-            </DialogDescription>
-          </DialogHeader>
-
-          <div className="flex flex-col items-center space-y-6 py-6">
-            {badgeDataUrl && (
-              <img
-                src={badgeDataUrl}
-                alt="Insignia Generada"
-                className="max-w-full h-auto"
-                style={{ maxHeight: "350px" }}
-              />
-            )}
-
-            <Button
-              onClick={downloadBadge}
-              className="px-6 py-2 font-medium w-full cursor-pointer"
-              style={{ backgroundColor: "#FFDA35", color: "#000" }}
-            >
-              Descargar
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
       <div className="w-full max-w-md">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -201,5 +201,69 @@ export function BadgeForm() {
         </Form>
       </div>
     </>
+  );
+}
+
+function ShareComponent({ onGoBack }: { onGoBack: () => void }) {
+  const [name] = useQueryState("name", parseAsString.withDefault(""));
+  const [role] = useQueryState("role", parseAsString.withDefault(""));
+
+  const shareOnLinkedIn = () => {
+    const text = encodeURIComponent(
+      `🎉 ¡Acabo de crear mi insignia del Hackathon de IA! Como ${role}, estoy emocionado de ser parte de la innovación tecnológica en LATAM. #HackathonIA #TechLatam #Innovation`
+    );
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.origin}&text=${text}`,
+      "_blank"
+    );
+  };
+
+  const shareOnInstagram = () => {
+    window.open("https://www.instagram.com/", "_blank");
+  };
+
+  return (
+    <div className="w-full max-w-md space-y-4">
+      <div className="space-y-2">
+        <h2 className="text-xl font-medium" style={{ color: "#D9D9D9" }}>
+          ¡Insignia creada!
+        </h2>
+        <p className="text-sm" style={{ color: "#666666" }}>
+          Tu insignia ha sido descargada. Compártela en redes sociales.
+        </p>
+      </div>
+
+      <div className="flex gap-3">
+        <Button
+          onClick={shareOnLinkedIn}
+          className="flex-1 font-medium cursor-pointer text-white flex items-center justify-center gap-2"
+          style={{ backgroundColor: "#333333" }}
+        >
+          <Linkedin className="w-4 h-4" />
+          Compartir en LinkedIn
+        </Button>
+
+        <Button
+          onClick={shareOnInstagram}
+          className="flex-1 font-medium cursor-pointer text-white flex items-center justify-center gap-2"
+          style={{ backgroundColor: "#333333" }}
+        >
+          <Instagram className="w-4 h-4" />
+          Compartir en Instagram
+        </Button>
+      </div>
+
+      <div className="space-y-3">
+        <Button
+          variant="outline"
+          onClick={onGoBack}
+          className="cursor-pointer w-full"
+          style={{ backgroundColor: "#FFFFFF" }}
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Volver a Editar
+        </Button>
+      </div>
+    </div>
   );
 }

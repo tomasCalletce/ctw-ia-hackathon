@@ -1,7 +1,7 @@
 "use client";
 
 import * as THREE from "three";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
@@ -18,6 +18,7 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
+import { useQueryState, parseAsString } from "nuqs";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -39,6 +40,9 @@ useTexture.preload(
 
 export default function App() {
   const debug = false;
+  const [name] = useQueryState("name", parseAsString.withDefault(""));
+  const [role] = useQueryState("role", parseAsString.withDefault(""));
+
   return (
     <div className="w-full h-full" style={{ backgroundColor: "transparent" }}>
       <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
@@ -49,7 +53,7 @@ export default function App() {
           gravity={[0, -40, 0]}
           timeStep={1 / 60}
         >
-          <Band />
+          <Band name={name} role={role} />
         </Physics>
         <Environment blur={0.75}>
           <Lightformer
@@ -89,9 +93,16 @@ export default function App() {
 interface BandProps {
   maxSpeed?: number;
   minSpeed?: number;
+  name?: string;
+  role?: string;
 }
 
-function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
+function Band({
+  maxSpeed = 50,
+  minSpeed = 10,
+  name = "",
+  role = "",
+}: BandProps) {
   const band = useRef<any>(null);
   const fixed = useRef<any>(null);
   const j1 = useRef<any>(null);
