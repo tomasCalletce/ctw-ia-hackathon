@@ -240,7 +240,7 @@ function ShareComponent({ onGoBack }: { onGoBack: () => void }) {
           style={{ backgroundColor: "#333333" }}
         >
           <Linkedin className="w-4 h-4" />
-          Compartir en LinkedIn
+          LinkedIn
         </Button>
 
         <Button
@@ -249,7 +249,7 @@ function ShareComponent({ onGoBack }: { onGoBack: () => void }) {
           style={{ backgroundColor: "#333333" }}
         >
           <Instagram className="w-4 h-4" />
-          Compartir en Instagram
+          Instagram
         </Button>
       </div>
 
