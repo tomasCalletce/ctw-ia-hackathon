@@ -161,7 +161,6 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="role"
@@ -185,7 +184,6 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="email"
@@ -209,7 +207,6 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
                 </FormItem>
               )}
             />
-
             <div className="text-center space-y-2">
               <Button
                 type="submit"
