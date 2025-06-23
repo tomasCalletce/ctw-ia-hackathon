@@ -34,9 +34,7 @@ declare global {
 useGLTF.preload(
   "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb"
 );
-useTexture.preload(
-  "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg"
-);
+useTexture.preload("/lanyard.png");
 
 export default function App() {
   const debug = false;
@@ -127,9 +125,7 @@ function Band({
     "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb"
   ) as any;
 
-  const texture = useTexture(
-    "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg"
-  );
+  const texture = useTexture("/lanyard.png");
 
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(

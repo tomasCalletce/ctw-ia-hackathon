@@ -9,7 +9,16 @@ export function Footer() {
           rel="noopener noreferrer"
           className="hover:text-gray-300 transition-colors underline cursor-pointer"
         >
-          tomas
+          Tomas
+        </a>
+        ,{" "}
+        <a
+          href="https://www.linkedin.com/in/cristiancamilocorrea/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-300 transition-colors underline cursor-pointer"
+        >
+          Cristian
         </a>
         {" • "}
         design by{" "}
@@ -19,7 +28,7 @@ export function Footer() {
           rel="noopener noreferrer"
           className="hover:text-gray-300 transition-colors underline cursor-pointer"
         >
-          aleja
+          Aleja
         </a>
         {" • "}
         inspiration from{" "}
@@ -30,16 +39,6 @@ export function Footer() {
           className="hover:text-gray-300 transition-colors underline cursor-pointer"
         >
           vercel.com
-        </a>
-        {" • "}
-        help from{" "}
-        <a
-          href="https://www.linkedin.com/in/cristiancamilocorrea/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-gray-300 transition-colors underline cursor-pointer"
-        >
-          Cristian
         </a>
       </p>
     </footer>

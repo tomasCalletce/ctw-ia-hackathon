@@ -1,6 +1,6 @@
 import { HydrateClient } from "~/trpc/server";
 import { HeroSection } from "~/app/_components/hero-section";
-import { Footer } from "~/components/footer";
+import { Footer } from "~/app/_components/footer";
 
 export default async function Home() {
   return (
