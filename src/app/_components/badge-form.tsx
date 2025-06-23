@@ -53,6 +53,7 @@ const badgeSchema = z.object({
     .string()
     .min(1, "El rol es obligatorio")
     .max(20, "Rol demasiado largo"),
+  email: z.string().min(1, "El email es obligatorio").email("Email inválido"),
 });
 
 type BadgeForm = z.infer<typeof badgeSchema>;
@@ -60,6 +61,10 @@ type BadgeForm = z.infer<typeof badgeSchema>;
 function BadgeFormComponent({ onSuccess }: { onSuccess: () => Promise<void> }) {
   const [name, setName] = useQueryState("name", parseAsString.withDefault(""));
   const [role, setRole] = useQueryState("role", parseAsString.withDefault(""));
+  const [email, setEmail] = useQueryState(
+    "email",
+    parseAsString.withDefault("")
+  );
   const [isGenerating, setIsGenerating] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -68,10 +73,15 @@ function BadgeFormComponent({ onSuccess }: { onSuccess: () => Promise<void> }) {
     defaultValues: {
       name: name,
       role: role,
+      email: email,
     },
   });
 
-  const generateBadge = async (name: string, role: string): Promise<void> => {
+  const generateBadge = async (
+    name: string,
+    role: string,
+    email: string
+  ): Promise<void> => {
     return new Promise((resolve) => {
       if (!canvasRef.current) {
         resolve();
@@ -110,6 +120,11 @@ function BadgeFormComponent({ onSuccess }: { onSuccess: () => Promise<void> }) {
         ctx.font = "20px Arial";
         ctx.fillText(role, 300, 250);
 
+        // Draw email
+        ctx.fillStyle = "#D9D9D9";
+        ctx.font = "16px Arial";
+        ctx.fillText(email, 300, 280);
+
         // Download the badge
         const dataUrl = canvas.toDataURL("image/png");
         const link = document.createElement("a");
@@ -131,8 +146,13 @@ function BadgeFormComponent({ onSuccess }: { onSuccess: () => Promise<void> }) {
   };
 
   const onSubmit = async (data: BadgeForm) => {
-    await generateBadge(data.name, data.role);
-    await Promise.all([setName(data.name), setRole(data.role), onSuccess()]);
+    await generateBadge(data.name, data.role, data.email);
+    await Promise.all([
+      setName(data.name),
+      setRole(data.role),
+      setEmail(data.email),
+      onSuccess(),
+    ]);
   };
 
   return (
@@ -189,14 +209,48 @@ function BadgeFormComponent({ onSuccess }: { onSuccess: () => Promise<void> }) {
               )}
             />
 
-            <Button
-              type="submit"
-              disabled={isGenerating}
-              className="w-full font-medium cursor-pointer"
-              style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
-            >
-              Crear Insignia | Compartir en <Linkedin className="w-4 h-4" />
-            </Button>
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel
+                    style={{ color: "#D9D9D9" }}
+                    className="text-sm font-medium"
+                  >
+                    Email
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      placeholder="Ingresa tu email"
+                      className="bg-black/20 border-white/20 text-white placeholder:text-white/50 focus:border-yellow-400/50 focus:ring-yellow-400/20"
+                      style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <div className="text-center space-y-2">
+              <Button
+                type="submit"
+                disabled={isGenerating}
+                className="w-full font-medium cursor-pointer"
+                style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
+              >
+                Crear Insignia | Compartir en <Linkedin className="w-4 h-4" />
+              </Button>
+              <div className="text-center">
+                <p
+                  className="text-xs font-light tracking-wide opacity-60"
+                  style={{ color: "#D9D9D9" }}
+                >
+                  Sé el primero en saber cuando abrimos inscripciones
+                </p>
+              </div>
+            </div>
           </form>
         </Form>
       </div>
