@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Badge3D from "~/app/_components/3d-badge";
-import { BadgeForm } from "~/app/_components/badge-form";
+import { BadgeForm } from "~/app/_components/main-form";
 import { Suspense } from "react";
 
 export function HeroSection() {
