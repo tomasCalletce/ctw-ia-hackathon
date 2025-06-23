@@ -1,6 +1,6 @@
 import { createTRPCRouter } from "~/server/api/trpc";
 import { create } from "./procedure/create";
 
-export const badgeRouter = createTRPCRouter({
+export const hackerRouter = createTRPCRouter({
   create,
 });

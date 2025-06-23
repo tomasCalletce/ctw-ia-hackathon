@@ -1,5 +1,5 @@
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
-import { badgeRouter } from "./routers/badge/router";
+import { hackerRouter } from "~/server/api/routers/hacker/router";
 
 /**
  * This is the primary router for your server.
@@ -7,7 +7,7 @@ import { badgeRouter } from "./routers/badge/router";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  badge: badgeRouter,
+  badge: hackerRouter,
 });
 
 // export type definition of API
