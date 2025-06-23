@@ -18,7 +18,6 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
-import { useQueryState, parseAsString } from "nuqs";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -38,8 +37,6 @@ useTexture.preload("/lanyard.png");
 
 export default function App() {
   const debug = false;
-  const [name] = useQueryState("name", parseAsString.withDefault(""));
-  const [role] = useQueryState("role", parseAsString.withDefault(""));
 
   return (
     <div className="w-full h-full" style={{ backgroundColor: "transparent" }}>
@@ -51,7 +48,7 @@ export default function App() {
           gravity={[0, -40, 0]}
           timeStep={1 / 60}
         >
-          <Band name={name} role={role} />
+          <Band />
         </Physics>
         <Environment blur={0.75}>
           <Lightformer
@@ -91,16 +88,9 @@ export default function App() {
 interface BandProps {
   maxSpeed?: number;
   minSpeed?: number;
-  name?: string;
-  role?: string;
 }
 
-function Band({
-  maxSpeed = 50,
-  minSpeed = 10,
-  name = "",
-  role = "",
-}: BandProps) {
+function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   const band = useRef<any>(null);
   const fixed = useRef<any>(null);
   const j1 = useRef<any>(null);

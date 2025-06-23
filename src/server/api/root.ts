@@ -7,7 +7,7 @@ import { hackerRouter } from "~/server/api/routers/hacker/router";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  badge: hackerRouter,
+  hacker: hackerRouter,
 });
 
 // export type definition of API

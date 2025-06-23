@@ -3,7 +3,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useQueryState, parseAsString } from "nuqs";
 import { useRef, useState } from "react";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
@@ -15,18 +14,23 @@ import {
   FormLabel,
   FormMessage,
 } from "~/components/ui/form";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Loader2 } from "lucide-react";
+import { api } from "~/trpc/react";
 
 const badgeSchema = z.object({
   name: z
     .string()
     .min(1, "El nombre es obligatorio")
-    .max(20, "Nombre demasiado largo"),
+    .max(100, "Nombre demasiado largo"),
   role: z
     .string()
     .min(1, "El rol es obligatorio")
-    .max(20, "Rol demasiado largo"),
-  email: z.string().min(1, "El email es obligatorio").email("Email inválido"),
+    .max(80, "Rol demasiado largo"),
+  email: z
+    .string()
+    .min(1, "El email es obligatorio")
+    .email("Email inválido")
+    .max(254, "Email demasiado largo"),
 });
 
 type BadgeForm = z.infer<typeof badgeSchema>;
@@ -36,21 +40,19 @@ interface InputFormProps {
 }
 
 export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
-  const [name, setName] = useQueryState("name", parseAsString.withDefault(""));
-  const [role, setRole] = useQueryState("role", parseAsString.withDefault(""));
-  const [email, setEmail] = useQueryState(
-    "email",
-    parseAsString.withDefault("")
-  );
   const [isGenerating, setIsGenerating] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const form = useForm<BadgeForm>({
     resolver: zodResolver(badgeSchema),
-    defaultValues: {
-      name: name,
-      role: role,
-      email: email,
+  });
+
+  const hackerMutation = api.hacker.create.useMutation({
+    onSuccess: () => {
+      onSuccess();
+    },
+    onError: (error) => {
+      console.error(error);
     },
   });
 
@@ -124,12 +126,11 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
 
   const onSubmit = async (data: BadgeForm) => {
     await generateBadge(data.name, data.role, data.email);
-    await Promise.all([
-      setName(data.name),
-      setRole(data.role),
-      setEmail(data.email),
-      onSuccess(),
-    ]);
+    hackerMutation.mutate({
+      name: data.name,
+      role: data.role,
+      email: data.email,
+    });
   };
 
   return (
@@ -214,7 +215,14 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
                 className="w-full font-medium cursor-pointer"
                 style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
               >
-                Crear Insignia | Compartir en <Linkedin className="w-4 h-4" />
+                {hackerMutation.isPending || isGenerating ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <>
+                    Crear Insignia | Compartir en{" "}
+                    <Linkedin className="w-4 h-4" />
+                  </>
+                )}
               </Button>
               <div className="text-center space-y-1">
                 <p

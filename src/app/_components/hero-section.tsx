@@ -79,9 +79,7 @@ export function HeroSection() {
               de la región.
             </p>
             <div className="mb-8">
-              <Suspense>
-                <BadgeForm />
-              </Suspense>
+              <BadgeForm />
             </div>
           </div>
           <div>
@@ -106,9 +104,7 @@ export function HeroSection() {
         </div>
         <div className="hidden lg:flex w-1/2 h-screen items-center justify-center">
           <div className="relative w-full h-full flex items-center justify-center">
-            <Suspense>
-              <Badge3D />
-            </Suspense>
+            <Badge3D />
           </div>
         </div>
       </div>
