@@ -79,7 +79,9 @@ export function HeroSection() {
               de la región.
             </p>
             <div className="mb-8">
-              <BadgeForm />
+              <Suspense>
+                <BadgeForm />
+              </Suspense>
             </div>
           </div>
           <div>
