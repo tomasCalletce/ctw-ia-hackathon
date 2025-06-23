@@ -242,12 +242,15 @@ function BadgeFormComponent({ onSuccess }: { onSuccess: () => Promise<void> }) {
               >
                 Crear Insignia | Compartir en <Linkedin className="w-4 h-4" />
               </Button>
-              <div className="text-center">
+              <div className="text-center space-y-1">
                 <p
                   className="text-xs font-light tracking-wide opacity-60"
                   style={{ color: "#D9D9D9" }}
                 >
                   Sé el primero en saber cuando abrimos inscripciones
+                </p>
+                <p className="text-xs opacity-40" style={{ color: "#D9D9D9" }}>
+                  Si das click aceptas recibir correos de la Hackathon
                 </p>
               </div>
             </div>
