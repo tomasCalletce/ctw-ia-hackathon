@@ -199,7 +199,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
                   <FormControl>
                     <Input
                       {...field}
-                      placeholder="simon@borrero.com"
+                      placeholder="simon@rappi.com"
                       className="bg-black/20 border-white/20 text-white placeholder:text-white/50 focus:border-yellow-400/50 focus:ring-yellow-400/20"
                       style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
                     />
