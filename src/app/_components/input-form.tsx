@@ -81,31 +81,35 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
       img.crossOrigin = "anonymous";
 
       img.onload = () => {
-        // Set canvas size
-        canvas.width = 600;
-        canvas.height = 400;
+        // Use original image dimensions to maintain quality
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
 
-        // Draw base image
-        ctx.drawImage(img, 0, 0, 600, 400);
+        // Draw base image at full resolution
+        ctx.drawImage(img, 0, 0);
 
-        // Draw name
+        // Calculate responsive font sizes based on image dimensions
+        const baseWidth = img.naturalWidth;
+        const scaleFactor = baseWidth / 600; // Assuming 600 was the intended base width
+
+        // Draw name with responsive sizing
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "bold 48px Arial";
+        ctx.font = `bold ${Math.round(48 * scaleFactor)}px Arial`;
         ctx.textAlign = "center";
-        ctx.fillText(name, 300, 200);
+        ctx.fillText(name, baseWidth / 2, img.naturalHeight * 0.5);
 
-        // Draw role
+        // Draw role with responsive sizing
         ctx.fillStyle = "#D9D9D9";
-        ctx.font = "20px Arial";
-        ctx.fillText(role, 300, 250);
+        ctx.font = `${Math.round(20 * scaleFactor)}px Arial`;
+        ctx.fillText(role, baseWidth / 2, img.naturalHeight * 0.625);
 
-        // Draw email
+        // Draw email with responsive sizing
         ctx.fillStyle = "#D9D9D9";
-        ctx.font = "16px Arial";
-        ctx.fillText(email, 300, 280);
+        ctx.font = `${Math.round(16 * scaleFactor)}px Arial`;
+        ctx.fillText(email, baseWidth / 2, img.naturalHeight * 0.7);
 
-        // Download the badge
-        const dataUrl = canvas.toDataURL("image/png");
+        // Download the badge with better quality
+        const dataUrl = canvas.toDataURL("image/png", 1.0);
         const link = document.createElement("a");
         link.download = `${name.replace(/\s+/g, "_")}_hackathon_badge.png`;
         link.href = dataUrl;
@@ -120,7 +124,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
         resolve();
       };
 
-      img.src = "/badge-base.svg";
+      img.src = "/share-card.jpeg";
     });
   };
 
