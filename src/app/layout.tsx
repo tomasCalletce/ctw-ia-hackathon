@@ -10,11 +10,11 @@ export const metadata = {
   description:
     "IA HACKATHON by Colombia Tech Fest and Makers. La plataforma de innovación de la región.",
   openGraph: {
-    images: "/social-link.png",
+    images: "/social.png",
   },
   twitter: {
     card: "summary_large_image",
-    images: "/social-link.png",
+    images: "/social.png",
   },
 };
 
