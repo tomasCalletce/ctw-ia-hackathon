@@ -2,7 +2,7 @@
 
 import { useQueryState, parseAsStringLiteral } from "nuqs";
 import { InputForm } from "~/app/_components/input-form";
-import { SuccessForm } from "~/app/_components/success-from";
+import { SuccessForm } from "~/app/_components/success-form";
 
 enum ViewState {
   FORM = "form",
