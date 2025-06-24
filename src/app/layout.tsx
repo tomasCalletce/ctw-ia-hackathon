@@ -1,36 +1,20 @@
 import "~/styles/globals.css";
 
-import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
-import { Footer } from "~/app/_components/footer";
 
-export const metadata: Metadata = {
+export const metadata = {
+  metadataBase: new URL("https://ctw-ia-hackathon.vercel.app"),
   title: "IA HACKATHON",
   description:
     "IA HACKATHON by Colombia Tech Fest and Makers. La plataforma de innovación de la región.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
   openGraph: {
-    title: "IA HACKATHON",
-    description:
-      "IA HACKATHON by Colombia Tech Fest and Makers. La plataforma de innovación de la región.",
-    images: [
-      {
-        url: "/social-link.png",
-        width: 1200,
-        height: 630,
-        alt: "IA HACKATHON - Colombia Tech Fest",
-      },
-    ],
-    type: "website",
+    images: "/social-link.png",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IA HACKATHON",
-    description:
-      "IA HACKATHON by Colombia Tech Fest and Makers. La plataforma de innovación de la región.",
-    images: ["/social-link.png"],
+    images: "/social-link.png",
   },
 };
 
