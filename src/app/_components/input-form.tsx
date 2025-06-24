@@ -81,35 +81,26 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
       img.crossOrigin = "anonymous";
 
       img.onload = () => {
-        // Use original image dimensions to maintain quality
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
+        // Set canvas size to match actual image dimensions
+        canvas.width = 1201;
+        canvas.height = 1351;
 
-        // Draw base image at full resolution
-        ctx.drawImage(img, 0, 0);
+        // Draw base image at original size
+        ctx.drawImage(img, 0, 0, 1201, 1351);
 
-        // Calculate responsive font sizes based on image dimensions
-        const baseWidth = img.naturalWidth;
-        const scaleFactor = baseWidth / 600; // Assuming 600 was the intended base width
-
-        // Draw name with responsive sizing
+        // Draw name (scaled for larger canvas)
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = `bold ${Math.round(48 * scaleFactor)}px Arial`;
+        ctx.font = "bold 96px Arial";
         ctx.textAlign = "center";
-        ctx.fillText(name, baseWidth / 2, img.naturalHeight * 0.5);
+        ctx.fillText(name, 600, 950);
 
-        // Draw role with responsive sizing
+        // Draw role (scaled for larger canvas)
         ctx.fillStyle = "#D9D9D9";
-        ctx.font = `${Math.round(20 * scaleFactor)}px Arial`;
-        ctx.fillText(role, baseWidth / 2, img.naturalHeight * 0.625);
+        ctx.font = "40px Arial";
+        ctx.fillText(role, 600, 1010);
 
-        // Draw email with responsive sizing
-        ctx.fillStyle = "#D9D9D9";
-        ctx.font = `${Math.round(16 * scaleFactor)}px Arial`;
-        ctx.fillText(email, baseWidth / 2, img.naturalHeight * 0.7);
-
-        // Download the badge with better quality
-        const dataUrl = canvas.toDataURL("image/png", 1.0);
+        // Download the badge
+        const dataUrl = canvas.toDataURL("image/png");
         const link = document.createElement("a");
         link.download = `${name.replace(/\s+/g, "_")}_hackathon_badge.png`;
         link.href = dataUrl;
@@ -124,7 +115,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
         resolve();
       };
 
-      img.src = "/share-card.jpeg";
+      img.src = "/share-card.jpg";
     });
   };
 
