@@ -43,7 +43,7 @@ export function Footer() {
         {" • "}
         design by{" "}
         <a
-          href="https://www.linkedin.com/in/alejandra-garcia-garcia-b30000000000000000000000/"
+          href="https://www.linkedin.com/in/alejamorales/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-gray-300 transition-colors underline cursor-pointer"
