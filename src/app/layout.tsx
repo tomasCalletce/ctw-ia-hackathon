@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { Geist } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   metadataBase: new URL("https://ctw-ia-hackathon.vercel.app"),
@@ -30,7 +31,10 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable}`}>
       <body>
         <NuqsAdapter>
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            {children}
+            <Analytics />
+          </TRPCReactProvider>
         </NuqsAdapter>
       </body>
     </html>
