@@ -18,6 +18,8 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
+import { useBadgeContext } from "../_context/badge-context";
+import { generateCardTexture } from "../_utils/texture-generator";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -95,6 +97,9 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   const j2 = useRef<any>(null);
   const j3 = useRef<any>(null);
   const card = useRef<any>(null);
+  
+  const { cardData, shouldRegenerateBadge, resetBadgeRegeneration } = useBadgeContext();
+  const [dynamicTexture, setDynamicTexture] = useState<string | null>(null);
 
   const vec = new THREE.Vector3();
   const ang = new THREE.Vector3();
@@ -112,6 +117,57 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   const { nodes, materials } = useGLTF("/id-card.glb") as any;
 
   const texture = useTexture("/lanyard.png");
+  
+  // Generate dynamic texture when card data is available
+  useEffect(() => {
+    if (cardData && shouldRegenerateBadge) {
+      generateCardTexture({
+        name: cardData.name,
+        title: cardData.title,
+        company: "", // Not needed
+      })
+        .then((textureUrl) => {
+          setDynamicTexture(textureUrl);
+          resetBadgeRegeneration();
+          // Restart 3D scene movement
+          restartPhysicsMovement();
+        })
+        .catch((error) => {
+          console.error("Failed to generate card texture:", error);
+          resetBadgeRegeneration();
+        });
+    }
+  }, [cardData, shouldRegenerateBadge, resetBadgeRegeneration]);
+
+  // Function to restart physics movement
+  const restartPhysicsMovement = () => {
+    if (card.current && j1.current && j2.current && j3.current && fixed.current) {
+      // Wake up all physics bodies
+      [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
+      
+      // Reset positions to initial state
+      j1.current.setTranslation({ x: 2.0, y: 4, z: 0 }, true);
+      j2.current.setTranslation({ x: 2.5, y: 4, z: 0 }, true);
+      j3.current.setTranslation({ x: 3.0, y: 4, z: 0 }, true);
+      card.current.setTranslation({ x: 3.5, y: 4, z: 0 }, true);
+      
+      // Add some initial movement impulse
+      card.current.applyImpulse({ x: 2, y: -1, z: 1 }, true);
+      j3.current.applyImpulse({ x: 1, y: -0.5, z: 0.5 }, true);
+      j2.current.applyImpulse({ x: 0.5, y: -0.3, z: 0.3 }, true);
+      j1.current.applyImpulse({ x: 0.3, y: -0.2, z: 0.2 }, true);
+    }
+  };
+
+  // Create THREE texture from data URL
+  const cardTexture = useMemo(() => {
+    if (!dynamicTexture) return materials["base.001"].map;
+    
+    const loader = new THREE.TextureLoader();
+    const tex = loader.load(dynamicTexture);
+    tex.flipY = false; // Important for correct orientation
+    return tex;
+  }, [dynamicTexture, materials]);
 
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
@@ -206,7 +262,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={[1.5, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
@@ -246,7 +302,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial
-                map={materials["base.001"].map}
+                map={cardTexture}
                 map-anisotropy={16}
                 clearcoat={1}
                 clearcoatRoughness={0.15}

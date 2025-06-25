@@ -2,13 +2,15 @@ import Image from "next/image";
 import Badge3D from "~/app/_components/3d-badge";
 import { BadgeForm } from "~/app/_components/main-form";
 import { Suspense } from "react";
+import { BadgeProvider } from "~/app/_context/badge-context";
 
 export function HeroSection() {
   return (
-    <section
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{ backgroundColor: "#0C0C0C" }}
-    >
+    <BadgeProvider>
+      <section
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+        style={{ backgroundColor: "transparent" }}
+      >
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -43,8 +45,11 @@ export function HeroSection() {
           className="transform rotate-180 w-16 h-16 md:w-[150px] md:h-[150px]"
         />
       </div>
-      <div className="container mx-auto px-8 lg:px-12 h-full flex items-center relative z-10">
-        <div className="w-full lg:w-1/2 lg:pr-16">
+      <div className="absolute inset-0 z-0">
+        <Badge3D />
+      </div>
+      <div className="container mx-auto px-8 lg:px-12 h-full flex items-center relative z-10 pointer-events-none">
+        <div className="w-full lg:w-1/2 lg:pr-16 pointer-events-auto">
           <div className="group mb-4">
             <Image
               src="/logo.svg"
@@ -104,12 +109,8 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex w-1/2 h-screen items-center justify-center">
-          <div className="relative w-full h-full flex items-center justify-center">
-            <Badge3D />
-          </div>
-        </div>
       </div>
     </section>
+    </BadgeProvider>
   );
 }

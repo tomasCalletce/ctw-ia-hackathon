@@ -16,6 +16,7 @@ import {
 } from "~/components/ui/form";
 import { Linkedin, Loader2 } from "lucide-react";
 import { api } from "~/trpc/react";
+import { useBadgeContext } from "~/app/_context/badge-context";
 
 const badgeSchema = z.object({
   name: z
@@ -42,9 +43,15 @@ interface InputFormProps {
 export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
   const [isGenerating, setIsGenerating] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { updateCardData, triggerBadgeRegeneration } = useBadgeContext();
 
   const form = useForm<BadgeForm>({
     resolver: zodResolver(badgeSchema),
+    defaultValues: {
+      name: "",
+      role: "",
+      email: "",
+    },
   });
 
   const hackerMutation = api.hacker.create.useMutation({
@@ -120,7 +127,20 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
   };
 
   const onSubmit = async (data: BadgeForm) => {
+    // Update the badge context with the user data
+    updateCardData({
+      name: data.name,
+      title: data.role,
+      company: "",
+    });
+    
+    // Trigger badge regeneration in the 3D scene
+    triggerBadgeRegeneration();
+    
+    // Generate the downloadable badge
     await generateBadge(data.name, data.role, data.email);
+    
+    // Save to database
     hackerMutation.mutate({
       name: data.name,
       role: data.role,
