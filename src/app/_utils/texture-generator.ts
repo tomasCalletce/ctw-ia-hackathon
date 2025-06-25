@@ -27,12 +27,10 @@ export const generateCardTexture = async (cardData: CardData): Promise<string> =
         ctx.fillText(line, 30, 480 + (index * 55));
       });
 
-      // Title/Role - moved up
       ctx.fillStyle = '#ffdd00';
       ctx.font = 'bold 24px Arial';
       ctx.fillText(cardData.title, 30, 570);
 
-      // Convert canvas to data URL and resolve
       resolve(canvas.toDataURL('image/png'));
     };
 
@@ -40,7 +38,7 @@ export const generateCardTexture = async (cardData: CardData): Promise<string> =
       reject(new Error('Failed to load base texture'));
     };
 
-    // Load the base texture image
+
     baseImage.src = '/base_texture.png';
   });
 };
@@ -61,14 +59,14 @@ export const generateBandTexture = (): string => {
   for (let i = 0; i < 8; i++) {
     const x = i * 16;
     
-    // Chain link
+
     ctx.strokeStyle = '#555555';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.ellipse(x + 8, 16, 6, 10, 0, 0, Math.PI * 2);
     ctx.stroke();
     
-    // Inner highlight
+
     ctx.strokeStyle = '#777777';
     ctx.lineWidth = 1;
     ctx.beginPath();
@@ -76,7 +74,7 @@ export const generateBandTexture = (): string => {
     ctx.stroke();
   }
 
-  // Add some texture detail
+
   for (let i = 0; i < 50; i++) {
     const x = Math.random() * 128;
     const y = Math.random() * 32;

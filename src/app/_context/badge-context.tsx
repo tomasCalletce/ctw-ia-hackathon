@@ -1,7 +1,8 @@
 "use client";
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { CardData } from '../_types/card';
+import React, { createContext, useContext, useState } from 'react';
+import type { ReactNode } from 'react';
+import type { CardData } from '../_types/card';
 
 interface BadgeContextType {
   cardData: CardData | null;

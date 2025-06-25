@@ -118,18 +118,16 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
 
   const texture = useTexture("/lanyard.png");
   
-  // Generate dynamic texture when card data is available
   useEffect(() => {
     if (cardData && shouldRegenerateBadge) {
       generateCardTexture({
         name: cardData.name,
         title: cardData.title,
-        company: "", // Not needed
+        company: "",
       })
         .then((textureUrl) => {
           setDynamicTexture(textureUrl);
           resetBadgeRegeneration();
-          // Restart 3D scene movement
           restartPhysicsMovement();
         })
         .catch((error) => {
@@ -139,19 +137,15 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
     }
   }, [cardData, shouldRegenerateBadge, resetBadgeRegeneration]);
 
-  // Function to restart physics movement
   const restartPhysicsMovement = () => {
     if (card.current && j1.current && j2.current && j3.current && fixed.current) {
-      // Wake up all physics bodies
       [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
       
-      // Reset positions to initial state
       j1.current.setTranslation({ x: 2.0, y: 4, z: 0 }, true);
       j2.current.setTranslation({ x: 2.5, y: 4, z: 0 }, true);
       j3.current.setTranslation({ x: 3.0, y: 4, z: 0 }, true);
       card.current.setTranslation({ x: 3.5, y: 4, z: 0 }, true);
       
-      // Add some initial movement impulse
       card.current.applyImpulse({ x: 2, y: -1, z: 1 }, true);
       j3.current.applyImpulse({ x: 1, y: -0.5, z: 0.5 }, true);
       j2.current.applyImpulse({ x: 0.5, y: -0.3, z: 0.3 }, true);

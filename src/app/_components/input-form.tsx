@@ -127,20 +127,16 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
   };
 
   const onSubmit = async (data: BadgeForm) => {
-    // Update the badge context with the user data
     updateCardData({
       name: data.name,
       title: data.role,
       company: "",
     });
     
-    // Trigger badge regeneration in the 3D scene
     triggerBadgeRegeneration();
     
-    // Generate the downloadable badge
     await generateBadge(data.name, data.role, data.email);
     
-    // Save to database
     hackerMutation.mutate({
       name: data.name,
       role: data.role,
