@@ -16,7 +16,7 @@ import {
 } from "~/components/ui/form";
 import { Linkedin, Loader2 } from "lucide-react";
 import { api } from "~/trpc/react";
-import { useBadgeContext } from "~/app/_context/badge-context";
+import { useBadgeContext } from "~/contexts/badge-context";
 
 const badgeSchema = z.object({
   name: z
@@ -132,11 +132,11 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
       title: data.role,
       company: "",
     });
-    
+
     triggerBadgeRegeneration();
-    
+
     await generateBadge(data.name, data.role, data.email);
-    
+
     hackerMutation.mutate({
       name: data.name,
       role: data.role,

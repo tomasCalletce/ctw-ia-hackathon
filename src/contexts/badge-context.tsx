@@ -1,8 +1,8 @@
 "use client";
 
-import React, { createContext, useContext, useState } from 'react';
-import type { ReactNode } from 'react';
-import type { CardData } from '../_types/card';
+import React, { createContext, useContext, useState } from "react";
+import type { ReactNode } from "react";
+import type { CardData } from "../types/card";
 
 interface BadgeContextType {
   cardData: CardData | null;
@@ -17,7 +17,7 @@ const BadgeContext = createContext<BadgeContextType | undefined>(undefined);
 export const useBadgeContext = () => {
   const context = useContext(BadgeContext);
   if (!context) {
-    throw new Error('useBadgeContext must be used within a BadgeProvider');
+    throw new Error("useBadgeContext must be used within a BadgeProvider");
   }
   return context;
 };
@@ -55,4 +55,4 @@ export const BadgeProvider: React.FC<BadgeProviderProps> = ({ children }) => {
       {children}
     </BadgeContext.Provider>
   );
-}; 
+};

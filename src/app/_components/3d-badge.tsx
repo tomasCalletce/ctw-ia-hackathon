@@ -18,8 +18,8 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
-import { useBadgeContext } from "../_context/badge-context";
-import { generateCardTexture } from "../_utils/texture-generator";
+import { useBadgeContext } from "~/contexts/badge-context";
+import { generateCardTexture } from "~/lib/texture-generator";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -97,8 +97,9 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   const j2 = useRef<any>(null);
   const j3 = useRef<any>(null);
   const card = useRef<any>(null);
-  
-  const { cardData, shouldRegenerateBadge, resetBadgeRegeneration } = useBadgeContext();
+
+  const { cardData, shouldRegenerateBadge, resetBadgeRegeneration } =
+    useBadgeContext();
   const [dynamicTexture, setDynamicTexture] = useState<string | null>(null);
 
   const vec = new THREE.Vector3();
@@ -117,7 +118,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   const { nodes, materials } = useGLTF("/id-card.glb") as any;
 
   const texture = useTexture("/lanyard.png");
-  
+
   useEffect(() => {
     if (cardData && shouldRegenerateBadge) {
       generateCardTexture({
@@ -138,14 +139,20 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   }, [cardData, shouldRegenerateBadge, resetBadgeRegeneration]);
 
   const restartPhysicsMovement = () => {
-    if (card.current && j1.current && j2.current && j3.current && fixed.current) {
+    if (
+      card.current &&
+      j1.current &&
+      j2.current &&
+      j3.current &&
+      fixed.current
+    ) {
       [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
-      
+
       j1.current.setTranslation({ x: 2.0, y: 4, z: 0 }, true);
       j2.current.setTranslation({ x: 2.5, y: 4, z: 0 }, true);
       j3.current.setTranslation({ x: 3.0, y: 4, z: 0 }, true);
       card.current.setTranslation({ x: 3.5, y: 4, z: 0 }, true);
-      
+
       card.current.applyImpulse({ x: 2, y: -1, z: 1 }, true);
       j3.current.applyImpulse({ x: 1, y: -0.5, z: 0.5 }, true);
       j2.current.applyImpulse({ x: 0.5, y: -0.3, z: 0.3 }, true);
@@ -156,7 +163,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   // Create THREE texture from data URL
   const cardTexture = useMemo(() => {
     if (!dynamicTexture) return materials["base.001"].map;
-    
+
     const loader = new THREE.TextureLoader();
     const tex = loader.load(dynamicTexture);
     tex.flipY = false; // Important for correct orientation
