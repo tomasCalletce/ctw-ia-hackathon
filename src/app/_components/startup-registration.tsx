@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "~/components/ui/button";
+import { buttonVariants } from "~/components/ui/button";
 
 export function StartupRegistration() {
   return (
@@ -86,14 +87,18 @@ export function StartupRegistration() {
 
           {/* CTA Button */}
           <div className="flex flex-col items-center px-4">
-            <Button
-              size="lg"
-              className="cursor-pointer w-full max-w-xs sm:w-52 font-medium"
+            <Link
+              target="_blank"
+              href="https://app.youform.com/forms/exz8oyvu"
+              className={buttonVariants({
+                variant: "default",
+                className: "cursor-pointer w-full max-w-xs sm:w-52 font-medium",
+              })}
               style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
             >
               Registrar mi startup
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </Link>
 
             <p className="text-sm mt-2 opacity-60" style={{ color: "#888888" }}>
               solo{" "}
