@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import { ArrowRight, Users, Trophy, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "~/components/ui/button";
 
 export function StartupRegistration() {
   return (
-    <section className="pb-24 relative overflow-hidden">
+    <section className="pb-24 md:pt-0 pt-10 relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10"
         style={{
@@ -15,30 +14,30 @@ export function StartupRegistration() {
         }}
       />
 
-      <div className="container mx-auto px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Section indicator */}
-          <div className="flex items-center justify-center space-x-2 mb-4">
+          <div className="flex items-center justify-center space-x-2 mb-6">
             <div
-              className="w-6 h-0.5 rounded-full animate-pulse"
+              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
               style={{ backgroundColor: "#FFDA35" }}
             />
             <span
-              className="text-sm font-medium tracking-wider uppercase opacity-70"
+              className="text-xs sm:text-sm font-medium tracking-wider uppercase opacity-70"
               style={{ color: "#D9D9D9" }}
             >
               Pro Hackathon Track
             </span>
             <div
-              className="w-6 h-0.5 rounded-full animate-pulse"
+              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
               style={{ backgroundColor: "#FFDA35" }}
             />
           </div>
 
           {/* Main heading */}
-          <div className="space-y-6 mb-6">
+          <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
             <h2
-              className="text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-tight px-2"
               style={{
                 color: "#D9D9D9",
                 fontFamily:
@@ -67,9 +66,9 @@ export function StartupRegistration() {
           </div>
 
           {/* Description */}
-          <div className="mb-16">
+          <div className="mb-8 sm:mb-12 lg:mb-16">
             <p
-              className="text-lg lg:text-xl leading-relaxed font-light max-w-3xl mx-auto"
+              className="text-base sm:text-lg lg:text-xl leading-relaxed font-light max-w-3xl mx-auto px-2"
               style={{ color: "#D9D9D9" }}
             >
               Escoge el equipo oficial de tu{" "}
@@ -86,10 +85,10 @@ export function StartupRegistration() {
           </div>
 
           {/* CTA Button */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center px-4">
             <Button
               size="lg"
-              className="cursor-pointer w-52 font-medium"
+              className="cursor-pointer w-full max-w-xs sm:w-52 font-medium"
               style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
             >
               Registrar mi startup
