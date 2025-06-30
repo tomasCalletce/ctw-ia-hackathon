@@ -3,9 +3,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Custom Font */
+@font-face {
+  font-family: "NeuePower";
+  src: url("/NeuePower-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-neue-power: "NeuePower", var(--font-geist-sans), ui-sans-serif,
+    system-ui, sans-serif;
 }
 
 @theme inline {
@@ -122,5 +132,16 @@
   body {
     @apply text-foreground;
     background-color: #0c0c0c;
+  }
+}
+
+@layer utilities {
+  .font-neue-power {
+    font-family: var(--font-neue-power);
+  }
+
+  .text-highlight {
+    color: #ffda35;
+    font-weight: 600;
   }
 }

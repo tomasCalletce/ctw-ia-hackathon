@@ -18,33 +18,6 @@ export function HeroSection() {
               "radial-gradient(ellipse at center, rgba(255, 218, 53, 0.08) 0%, transparent 70%)",
           }}
         />
-        <div className="absolute top-0 right-0 opacity-20 animate-pulse">
-          <Image
-            src="/box2.svg"
-            alt=""
-            width={150}
-            height={150}
-            className="transform w-16 h-16 md:w-[150px] md:h-[150px]"
-          />
-        </div>
-        <div className="absolute bottom-0 left-0 opacity-20 animate-pulse">
-          <Image
-            src="/box2.svg"
-            alt=""
-            width={150}
-            height={150}
-            className="transform rotate-180 w-16 h-16 md:w-[150px] md:h-[150px]"
-          />
-        </div>
-        <div className="absolute bottom-0 right-0 opacity-20 animate-pulse">
-          <Image
-            src="/box1.svg"
-            alt=""
-            width={150}
-            height={150}
-            className="transform rotate-180 w-16 h-16 md:w-[150px] md:h-[150px]"
-          />
-        </div>
         <div className="absolute inset-0 hidden md:block z-0">
           <Badge3D />
         </div>
