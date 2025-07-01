@@ -2,7 +2,7 @@ import { Github } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="w-full py-2  text-xs text-gray-400 text-center">
+    <footer className="w-full py-4 text-xs text-gray-400 text-center border-t border-white/10">
       {/* Open Source Banner */}
       <div className="">
         <div className="flex items-center justify-center gap-2">
