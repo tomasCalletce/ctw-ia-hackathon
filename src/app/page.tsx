@@ -2,6 +2,7 @@ import { HydrateClient } from "~/trpc/server";
 import { HeroSection } from "~/app/_components/hero-section";
 import { Footer } from "~/app/_components/footer";
 import { StartupRegistration } from "~/app/_components/startup-registration";
+import { WhatsAppBanner } from "~/app/_components/whatsapp-banner";
 
 export default async function Home() {
   return (
@@ -11,17 +12,6 @@ export default async function Home() {
         style={{ backgroundColor: "#0C0C0C" }}
       >
         <div className="absolute inset-0 pointer-events-none hidden md:block">
-          {/* Box1 - Top left area */}
-          <div
-            className="absolute top-10 left-10 opacity-20 w-32 h-48 rotate-12"
-            style={{
-              backgroundImage: "url('/box1.svg')",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-            }}
-          />
-
           {/* Box2 - Top right area */}
           <div
             className="absolute top-20 right-16 opacity-15 w-40 h-32 -rotate-6"
@@ -77,7 +67,7 @@ export default async function Home() {
             }}
           />
         </div>
-
+        <WhatsAppBanner />
         {/* Main content */}
         <div className="relative z-10">
           <HeroSection />
