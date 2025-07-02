@@ -103,7 +103,7 @@ export function StartupRegistration() {
             <p className="text-sm mt-2 opacity-60" style={{ color: "#888888" }}>
               solo{" "}
               <span style={{ color: "#FFDA35", fontWeight: "600" }}>
-                10 cupos
+                7 cupos
               </span>{" "}
               disponibles
             </p>
