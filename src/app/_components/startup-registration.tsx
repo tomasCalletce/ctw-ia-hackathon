@@ -20,7 +20,7 @@ export function StartupRegistration() {
           {/* Section indicator */}
           <div className="flex items-center justify-center space-x-2 mb-6">
             <div
-              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
+              className="w-4 sm:w-6 h-0.5 rounded-full"
               style={{ backgroundColor: "#FFDA35" }}
             />
             <span
@@ -30,7 +30,7 @@ export function StartupRegistration() {
               Pro Hackathon Track
             </span>
             <div
-              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
+              className="w-4 sm:w-6 h-0.5 rounded-full"
               style={{ backgroundColor: "#FFDA35" }}
             />
           </div>
@@ -58,7 +58,7 @@ export function StartupRegistration() {
               >
                 empresas/startups
                 <div
-                  className="absolute -bottom-1 left-0 w-full h-0.5 animate-pulse"
+                  className="absolute -bottom-1 left-0 w-full h-0.5"
                   style={{ backgroundColor: "#FFDA35", opacity: 0.3 }}
                 />
               </span>{" "}
@@ -92,12 +92,13 @@ export function StartupRegistration() {
               href="https://app.youform.com/forms/exz8oyvu"
               className={buttonVariants({
                 variant: "default",
-                className: "cursor-pointer w-full max-w-xs sm:w-52 font-medium",
+                className:
+                  "cursor-pointer w-full max-w-md sm:w-80 font-medium text-lg py-4",
               })}
               style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
             >
               Registrar mi startup
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
 
             <p className="text-sm mt-2 opacity-60" style={{ color: "#888888" }}>
