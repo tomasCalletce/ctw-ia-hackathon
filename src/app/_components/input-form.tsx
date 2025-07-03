@@ -63,11 +63,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
     },
   });
 
-  const generateBadge = async (
-    name: string,
-    role: string,
-    email: string
-  ): Promise<void> => {
+  const generateBadge = async (name: string, role: string): Promise<void> => {
     return new Promise((resolve) => {
       if (!canvasRef.current) {
         resolve();
@@ -135,7 +131,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
 
     triggerBadgeRegeneration();
 
-    await generateBadge(data.name, data.role, data.email);
+    await generateBadge(data.name, data.role);
 
     hackerMutation.mutate({
       name: data.name,
@@ -240,7 +236,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onSuccess }) => {
                   className="text-xs font-light tracking-wide opacity-60"
                   style={{ color: "#D9D9D9" }}
                 >
-                  Sé el primero en saber cuando abrimos inscripciones
+                  Sé el primero en saber cuando abrimos inscripciones generales
                 </p>
                 <p className="text-xs opacity-40" style={{ color: "#D9D9D9" }}>
                   Si das click aceptas recibir correos de la Hackathon
