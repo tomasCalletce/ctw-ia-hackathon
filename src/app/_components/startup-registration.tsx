@@ -20,7 +20,7 @@ export function StartupRegistration() {
           {/* Section indicator */}
           <div className="flex items-center justify-center space-x-2 mb-6">
             <div
-              className="w-4 sm:w-6 h-0.5 rounded-full"
+              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
               style={{ backgroundColor: "#FFDA35" }}
             />
             <span
@@ -30,7 +30,7 @@ export function StartupRegistration() {
               Pro Hackathon Track
             </span>
             <div
-              className="w-4 sm:w-6 h-0.5 rounded-full"
+              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
               style={{ backgroundColor: "#FFDA35" }}
             />
           </div>
@@ -58,11 +58,10 @@ export function StartupRegistration() {
               >
                 empresas/startups
                 <div
-                  className="absolute -bottom-1 left-0 w-full h-0.5"
+                  className="absolute -bottom-1 left-0 w-full h-0.5 animate-pulse"
                   style={{ backgroundColor: "#FFDA35", opacity: 0.3 }}
                 />
               </span>{" "}
-              ya están abiertas
             </h2>
           </div>
 
@@ -104,7 +103,7 @@ export function StartupRegistration() {
             <p className="text-sm mt-2 opacity-60" style={{ color: "#888888" }}>
               solo{" "}
               <span style={{ color: "#FFDA35", fontWeight: "600" }}>
-                5 cupos
+                7 cupos
               </span>{" "}
               disponibles
             </p>
