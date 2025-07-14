@@ -148,10 +148,10 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
     ) {
       [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
 
-      j1.current.setTranslation({ x: 3.0, y: 4, z: 0 }, true);
-      j2.current.setTranslation({ x: 3.5, y: 4, z: 0 }, true);
-      j3.current.setTranslation({ x: 4.0, y: 4, z: 0 }, true);
-      card.current.setTranslation({ x: 4.5, y: 4, z: 0 }, true);
+      j1.current.setTranslation({ x: 3.0, y: 4.5, z: 0 }, true);
+      j2.current.setTranslation({ x: 3.5, y: 4.5, z: 0 }, true);
+      j3.current.setTranslation({ x: 4.0, y: 4.5, z: 0 }, true);
+      card.current.setTranslation({ x: 4.5, y: 4.5, z: 0 }, true);
 
       card.current.applyImpulse({ x: 2, y: -1, z: 1 }, true);
       j3.current.applyImpulse({ x: 1, y: -0.5, z: 0.5 }, true);
@@ -263,7 +263,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
 
   return (
     <>
-      <group position={[2.5, 4, 0]}>
+      <group position={[2.5, 4.5, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />

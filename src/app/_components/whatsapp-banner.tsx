@@ -13,7 +13,7 @@ export function WhatsAppBanner() {
         }}
       />
 
-      <div className="container mx-auto px-4 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 lg:px-12 relative z-10 border-b border-white/10">
         <div className="flex items-center justify-between py-3 lg:py-4">
           {/* Content */}
           <div className="flex items-center space-x-3 lg:space-x-4 flex-1">

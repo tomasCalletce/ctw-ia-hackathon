@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Badge3D from "~/app/_components/3d-badge";
-import { BadgeForm } from "~/app/_components/main-form";
-import { Suspense } from "react";
 import { BadgeProvider } from "~/contexts/badge-context";
+import { ApplyNow } from "~/app/_components/apply-now";
 
 export function HeroSection() {
   return (
     <BadgeProvider>
       <section
-        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+        className="h-[80vh] flex items-center justify-center relative overflow-hidden"
         style={{ backgroundColor: "transparent" }}
       >
         <div
@@ -18,11 +17,11 @@ export function HeroSection() {
               "radial-gradient(ellipse at center, rgba(255, 218, 53, 0.08) 0%, transparent 70%)",
           }}
         />
-        <div className="absolute inset-0 hidden md:block z-0">
+        <div className="absolute inset-0 hidden md:block z-0 w-full h-screen">
           <Badge3D />
         </div>
         <div className="container mx-auto px-8 lg:px-12 h-full flex items-center relative z-10 pointer-events-none">
-          <div className="w-full lg:w-1/2 lg:pr-16 pointer-events-auto">
+          <div className="w-full lg:w-2/5 lg:pr-8 pointer-events-auto">
             <div className="group mb-4">
               <Image
                 src="/logo.svg"
@@ -50,17 +49,13 @@ export function HeroSection() {
                 className="text-xl lg:text-xl xl:text-2xl leading-relaxed font-light tracking-wide mb-6"
                 style={{ color: "#666666" }}
               >
-                Únete a la plataforma de{" "}
+                La competencia más importante de{" "}
                 <span className="font-medium" style={{ color: "#D9D9D9" }}>
-                  innovación
+                  tecnología
                 </span>{" "}
-                de la región.
+                de Colombia.
               </p>
-              <div className="mb-8">
-                <Suspense>
-                  <BadgeForm />
-                </Suspense>
-              </div>
+              <ApplyNow />
             </div>
             <div>
               <div className="flex flex-col space-y-4">

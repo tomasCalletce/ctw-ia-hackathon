@@ -3,6 +3,8 @@ import { HeroSection } from "~/app/_components/hero-section";
 import { Footer } from "~/app/_components/footer";
 import { StartupRegistration } from "~/app/_components/startup-registration";
 import { WhatsAppBanner } from "~/app/_components/whatsapp-banner";
+import { SponsorsSection } from "~/app/_components/sponsors-section";
+import { GeneralInformation } from "~/app/_components/general-information";
 
 export default async function Home() {
   return (
@@ -71,6 +73,8 @@ export default async function Home() {
         {/* Main content */}
         <div className="relative z-10">
           <HeroSection />
+          {/* <SponsorsSection /> */}
+          <GeneralInformation />
           <StartupRegistration />
           <Footer />
         </div>
