@@ -21,7 +21,7 @@ export function HeroSection() {
           <Badge3D />
         </div>
         <div className="container mx-auto px-8 lg:px-12 h-full flex items-center relative z-10 pointer-events-none">
-          <div className="w-full lg:w-2/5 lg:pr-8 pointer-events-auto">
+          <div className="w-full lg:w-1/2 pointer-events-auto">
             <div className="group mb-4">
               <Image
                 src="/logo.svg"
@@ -49,11 +49,10 @@ export function HeroSection() {
                 className="text-xl lg:text-xl xl:text-2xl leading-relaxed font-light tracking-wide mb-6"
                 style={{ color: "#666666" }}
               >
-                La competencia más importante de{" "}
+                La hackathon más grande de{" "}
                 <span className="font-medium" style={{ color: "#D9D9D9" }}>
-                  tecnología
-                </span>{" "}
-                de Colombia.
+                  Colombia
+                </span>
               </p>
               <ApplyNow />
             </div>

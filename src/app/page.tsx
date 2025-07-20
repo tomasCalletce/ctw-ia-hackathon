@@ -5,6 +5,7 @@ import { StartupRegistration } from "~/app/_components/startup-registration";
 import { WhatsAppBanner } from "~/app/_components/whatsapp-banner";
 import { SponsorsSection } from "~/app/_components/sponsors-section";
 import { GeneralInformation } from "~/app/_components/general-information";
+import { CommunityPartnersSection } from "~/app/_components/community-partners-section";
 
 export default async function Home() {
   return (
@@ -73,9 +74,18 @@ export default async function Home() {
         {/* Main content */}
         <div className="relative z-10">
           <HeroSection />
-          {/* <SponsorsSection /> */}
-          <GeneralInformation />
-          <StartupRegistration />
+          <div className="lg:py-12">
+            <SponsorsSection />
+          </div>
+          <div className="lg:py-12">
+            <GeneralInformation />
+          </div>
+          <div className="lg:py-12">
+            <CommunityPartnersSection />
+          </div>
+          <div className="lg:py-12">
+            <StartupRegistration />
+          </div>
           <Footer />
         </div>
       </main>

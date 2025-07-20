@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-export function SponsorsSection() {
-  const allSponsors = [
-    { name: "Habi", logo: "/Habi.png" },
-    { name: "V0", logo: "/v0.png" },
-    { name: "Supabase", logo: "/supabase.png" },
-    { name: "Firecrawl", logo: "/firecrawl.png" },
-    { name: "Publicis Sapient", logo: "/publicis-sapien.png" },
+export function CommunityPartnersSection() {
+  const allPartners = [
+    { name: "Partner 1", logo: null },
+    { name: "Partner 2", logo: null },
+    { name: "Partner 3", logo: null },
+    { name: "Partner 4", logo: null },
+    { name: "Partner 5", logo: null },
   ];
 
   return (
@@ -31,7 +31,7 @@ export function SponsorsSection() {
               className="text-xs sm:text-sm font-medium tracking-wider uppercase opacity-70"
               style={{ color: "#D9D9D9" }}
             >
-              Sponsors
+              Community Partners
             </span>
             <div
               className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
@@ -50,7 +50,7 @@ export function SponsorsSection() {
                 letterSpacing: "0.02em",
               }}
             >
-              con el{" "}
+              nuestra{" "}
               <span
                 className="font-bold relative inline-block"
                 style={{
@@ -60,30 +60,38 @@ export function SponsorsSection() {
                   letterSpacing: "0.02em",
                 }}
               >
-                apoyo
+                comunidad
                 <div
                   className="absolute -bottom-1 left-0 w-full h-0.5 animate-pulse"
                   style={{ backgroundColor: "#FFDA35", opacity: 0.3 }}
                 />
-              </span>{" "}
-              de
+              </span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-0 max-w-fit mx-auto border border-white/20">
-            {allSponsors.map((sponsor, index) => (
+            {allPartners.map((partner, index) => (
               <div
                 key={index}
                 className="group relative aspect-[3/2] flex items-center justify-center p-4 border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5"
                 style={{ backgroundColor: "transparent" }}
               >
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width={800}
-                  height={480}
-                  className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                />
+                {partner.logo ? (
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={800}
+                    height={480}
+                    className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                ) : (
+                  <div
+                    className="text-sm opacity-40 group-hover:opacity-60 transition-opacity duration-300"
+                    style={{ color: "#666666" }}
+                  >
+                    {partner.name}
+                  </div>
+                )}
               </div>
             ))}
           </div>
