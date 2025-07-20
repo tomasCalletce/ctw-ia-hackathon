@@ -2,15 +2,27 @@ import Image from "next/image";
 
 export function SponsorsSection() {
   const allSponsors = [
-    { name: "Habi", logo: "/Habi.png" },
-    { name: "V0", logo: "/v0.png" },
-    { name: "Supabase", logo: "/supabase.png" },
-    { name: "Firecrawl", logo: "/firecrawl.png" },
-    { name: "Publicis Sapient", logo: "/publicis-sapien.png" },
+    { name: "Habi", logo: "/Habi.png", website: "https://habi.co" },
+    { name: "V0", logo: "/v0.png", website: "https://v0.dev" },
+    {
+      name: "Supabase",
+      logo: "/supabase.png",
+      website: "https://supabase.com",
+    },
+    {
+      name: "Firecrawl",
+      logo: "/firecrawl.png",
+      website: "https://firecrawl.dev",
+    },
+    {
+      name: "Publicis Sapient",
+      logo: "/publicis-sapien.png",
+      website: "https://publicissapient.com",
+    },
   ];
 
   return (
-    <section className="py-16 md:py-20 relative overflow-hidden">
+    <section className="pb-16 md:pb-28  relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -72,9 +84,12 @@ export function SponsorsSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-0 max-w-fit mx-auto border border-white/20">
             {allSponsors.map((sponsor, index) => (
-              <div
+              <a
                 key={index}
-                className="group relative aspect-[3/2] flex items-center justify-center p-4 border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5"
+                href={sponsor.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative aspect-[3/2] flex items-center justify-center p-4 border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5 cursor-pointer"
                 style={{ backgroundColor: "transparent" }}
               >
                 <Image
@@ -84,7 +99,7 @@ export function SponsorsSection() {
                   height={480}
                   className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>

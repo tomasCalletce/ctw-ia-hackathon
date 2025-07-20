@@ -6,7 +6,7 @@ import { buttonVariants } from "~/components/ui/button";
 
 export function StartupRegistration() {
   return (
-    <section className="pb-24 md:pt-0 pt-10 relative overflow-hidden">
+    <section className="pb-16 md:pb-28 relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10"
         style={{

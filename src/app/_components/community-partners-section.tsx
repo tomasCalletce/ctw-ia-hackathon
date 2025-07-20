@@ -2,15 +2,15 @@ import Image from "next/image";
 
 export function CommunityPartnersSection() {
   const allPartners = [
-    { name: "Partner 1", logo: null },
-    { name: "Partner 2", logo: null },
-    { name: "Partner 3", logo: null },
-    { name: "Partner 4", logo: null },
-    { name: "Partner 5", logo: null },
+    { name: "The Growth System", logo: "/the-growth-system.png" },
+    { name: "V0", logo: "/v0.png" },
+    { name: "Supabase", logo: "/supabase.png" },
+    { name: "Firecrawl", logo: "/firecrawl.png" },
+    { name: "Publicis Sapient", logo: "/publicis-sapien.png" },
   ];
 
   return (
-    <section className="py-16 md:py-20 relative overflow-hidden">
+    <section className="pb-16 md:pb-28  relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -50,7 +50,7 @@ export function CommunityPartnersSection() {
                 letterSpacing: "0.02em",
               }}
             >
-              nuestra{" "}
+              en{" "}
               <span
                 className="font-bold relative inline-block"
                 style={{
@@ -60,12 +60,13 @@ export function CommunityPartnersSection() {
                   letterSpacing: "0.02em",
                 }}
               >
-                comunidad
+                colaboración
                 <div
                   className="absolute -bottom-1 left-0 w-full h-0.5 animate-pulse"
                   style={{ backgroundColor: "#FFDA35", opacity: 0.3 }}
                 />
-              </span>
+              </span>{" "}
+              con
             </h2>
           </div>
 
@@ -76,22 +77,13 @@ export function CommunityPartnersSection() {
                 className="group relative aspect-[3/2] flex items-center justify-center p-4 border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5"
                 style={{ backgroundColor: "transparent" }}
               >
-                {partner.logo ? (
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    width={800}
-                    height={480}
-                    className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                  />
-                ) : (
-                  <div
-                    className="text-sm opacity-40 group-hover:opacity-60 transition-opacity duration-300"
-                    style={{ color: "#666666" }}
-                  >
-                    {partner.name}
-                  </div>
-                )}
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={800}
+                  height={480}
+                  className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
             ))}
           </div>

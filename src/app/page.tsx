@@ -71,21 +71,12 @@ export default async function Home() {
           />
         </div>
         <WhatsAppBanner />
-        {/* Main content */}
         <div className="relative z-10">
           <HeroSection />
-          <div className="lg:py-12">
-            <SponsorsSection />
-          </div>
-          <div className="lg:py-12">
-            <GeneralInformation />
-          </div>
-          <div className="lg:py-12">
-            <CommunityPartnersSection />
-          </div>
-          <div className="lg:py-12">
-            <StartupRegistration />
-          </div>
+          <SponsorsSection />
+          <GeneralInformation />
+          <CommunityPartnersSection />
+          <StartupRegistration />
           <Footer />
         </div>
       </main>
