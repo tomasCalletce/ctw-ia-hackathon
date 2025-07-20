@@ -23,38 +23,12 @@ export function SponsorsSection() {
 
   return (
     <section className="pb-16 md:pb-28  relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, rgba(255, 218, 53, 0.03) 0%, transparent 70%)",
-        }}
-      />
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Section indicator */}
-          <div className="flex items-center justify-center space-x-2 mb-8">
-            <div
-              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
-              style={{ backgroundColor: "#FFDA35" }}
-            />
-            <span
-              className="text-xs sm:text-sm font-medium tracking-wider uppercase opacity-70"
-              style={{ color: "#D9D9D9" }}
-            >
-              Sponsors
-            </span>
-            <div
-              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
-              style={{ backgroundColor: "#FFDA35" }}
-            />
-          </div>
-
           {/* Main heading */}
-          <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+          <div className="space-y-4 sm:space-y-6 mb-8 ">
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-tight px-2"
+              className="text-3xl font-light tracking-tight leading-tight px-2"
               style={{
                 color: "#D9D9D9",
                 fontFamily:
@@ -89,7 +63,7 @@ export function SponsorsSection() {
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative aspect-[3/2] flex items-center justify-center p-4 border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5 cursor-pointer"
+                className="group relative aspect-[3/2] flex items-center justify-center  border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5 cursor-pointer"
                 style={{ backgroundColor: "transparent" }}
               >
                 <Image
@@ -97,7 +71,7 @@ export function SponsorsSection() {
                   alt={sponsor.name}
                   width={800}
                   height={480}
-                  className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  className="w-full h-full object-contain "
                 />
               </a>
             ))}

@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export function CommunityPartnersSection() {
   const allPartners = [
-    { name: "The Growth System", logo: "/the-growth-system.png" },
-    { name: "V0", logo: "/v0.png" },
-    { name: "Supabase", logo: "/supabase.png" },
-    { name: "Firecrawl", logo: "/firecrawl.png" },
-    { name: "Publicis Sapient", logo: "/publicis-sapien.png" },
+    { name: "The Growth System", logo: "/the-growth-system.png", url: "https://thegrowthsystem.co/" },
+    { name: "Pygma", logo: "/pygma.png", url: "https://www.pygma.co/" },
+    { name: "Muno", logo: "/muno.svg", url: "#" },
+    { name: "aztec", logo: "/aztec.png", url: "https://azteclab.co/talleres" },
+    { name: "Quix", logo: "/quix.png", url: "https://quix.work/" },
   ];
 
   return (
@@ -21,28 +21,10 @@ export function CommunityPartnersSection() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Section indicator */}
-          <div className="flex items-center justify-center space-x-2 mb-8">
-            <div
-              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
-              style={{ backgroundColor: "#FFDA35" }}
-            />
-            <span
-              className="text-xs sm:text-sm font-medium tracking-wider uppercase opacity-70"
-              style={{ color: "#D9D9D9" }}
-            >
-              Community Partners
-            </span>
-            <div
-              className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
-              style={{ backgroundColor: "#FFDA35" }}
-            />
-          </div>
-
           {/* Main heading */}
-          <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
+          <div className="space-y-4 sm:space-y-6 mb-8 ">
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-tight px-2"
+              className="text-3xl font-light tracking-tight leading-tight px-2"
               style={{
                 color: "#D9D9D9",
                 fontFamily:
@@ -72,9 +54,12 @@ export function CommunityPartnersSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-0 max-w-fit mx-auto border border-white/20">
             {allPartners.map((partner, index) => (
-              <div
+              <a
                 key={index}
-                className="group relative aspect-[3/2] flex items-center justify-center p-4 border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5"
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative aspect-[3/2] flex items-center justify-center border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5 cursor-pointer"
                 style={{ backgroundColor: "transparent" }}
               >
                 <Image
@@ -84,7 +69,7 @@ export function CommunityPartnersSection() {
                   height={480}
                   className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>
