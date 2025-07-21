@@ -2,11 +2,17 @@ import Image from "next/image";
 
 export function CommunityPartnersSection() {
   const allPartners = [
-    { name: "The Growth System", logo: "/the-growth-system.png", url: "https://thegrowthsystem.co/" },
+    {
+      name: "The Growth System",
+      logo: "/the-growth-system.png",
+      url: "https://thegrowthsystem.co/",
+    },
     { name: "Pygma", logo: "/pygma.png", url: "https://www.pygma.co/" },
     { name: "Muno", logo: "/muno.svg", url: "#" },
     { name: "aztec", logo: "/aztec.png", url: "https://azteclab.co/talleres" },
     { name: "Quix", logo: "/quix.png", url: "https://quix.work/" },
+    { name: "Tribu IA", logo: "/tribu.png", url: "https://tribuia.org/" },
+    { name: "Lab 10", logo: "/lab-10.png", url: "https://lab10.ai/" },
   ];
 
   return (
@@ -52,14 +58,14 @@ export function CommunityPartnersSection() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-0 max-w-fit mx-auto border border-white/20">
+          <div className="flex flex-wrap justify-center border border-white/20">
             {allPartners.map((partner, index) => (
               <a
                 key={index}
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative aspect-[3/2] flex items-center justify-center border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5 cursor-pointer"
+                className="group relative aspect-[3/2] w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex items-center justify-center border-r border-b border-white/20 transition-all duration-300 hover:bg-white/5 cursor-pointer"
                 style={{ backgroundColor: "transparent" }}
               >
                 <Image
