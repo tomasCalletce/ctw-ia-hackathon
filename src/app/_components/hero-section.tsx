@@ -23,14 +23,21 @@ export function HeroSection() {
         <div className="container mx-auto px-8 lg:px-12 h-full flex items-center relative z-10 pointer-events-none">
           <div className="w-full lg:w-1/2 pointer-events-auto">
             <div className="group mb-4">
-              <Image
-                src="/logo.svg"
-                alt="Colombia Tech Fest Logo"
-                width={500}
-                height={200}
-                className="w-full max-w-lg"
-                priority
-              />
+              <a
+                href="https://www.colombiatechfest.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block cursor-pointer"
+              >
+                <Image
+                  src="/logo.svg"
+                  alt="Colombia Tech Fest Logo"
+                  width={500}
+                  height={200}
+                  className="w-full max-w-lg hover:opacity-90 transition-opacity duration-300"
+                  priority
+                />
+              </a>
             </div>
             <div className="mb-12">
               <div className="flex items-center space-x-2 mb-4">
@@ -65,13 +72,20 @@ export function HeroSection() {
                   Organizado por
                 </p>
                 <div className="group">
-                  <Image
-                    src="/col-makers.svg"
-                    alt="Col Makers - Organizadores"
-                    width={200}
-                    height={70}
-                    className="opacity-70"
-                  />
+                  <a
+                    href="https://www.colombiatechfest.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block cursor-pointer"
+                  >
+                    <Image
+                      src="/col-makers.svg"
+                      alt="Col Makers - Organizadores"
+                      width={200}
+                      height={70}
+                      className="opacity-70 hover:opacity-90 transition-opacity duration-300"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
