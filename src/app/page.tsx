@@ -3,6 +3,10 @@ import { HeroSection } from "~/app/_components/hero-section";
 import { Footer } from "~/app/_components/footer";
 import { StartupRegistration } from "~/app/_components/startup-registration";
 import { WhatsAppBanner } from "~/app/_components/whatsapp-banner";
+import { SponsorsSection } from "~/app/_components/sponsors-section";
+import { GeneralInformation } from "~/app/_components/general-information";
+import { CommunityPartnersSection } from "~/app/_components/community-partners-section";
+import { FAQSection } from "~/app/_components/faq-section";
 
 export default async function Home() {
   return (
@@ -68,9 +72,12 @@ export default async function Home() {
           />
         </div>
         <WhatsAppBanner />
-        {/* Main content */}
         <div className="relative z-10">
           <HeroSection />
+          <SponsorsSection />
+          <GeneralInformation />
+          <CommunityPartnersSection />
+          <FAQSection />
           <StartupRegistration />
           <Footer />
         </div>

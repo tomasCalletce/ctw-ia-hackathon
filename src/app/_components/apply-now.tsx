@@ -1,0 +1,39 @@
+import { Button } from "~/components/ui/button";
+import { ExternalLink, Sparkles } from "lucide-react";
+
+export const ApplyNow = () => {
+  return (
+    <div className="mb-8">
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <Button
+            asChild
+            size="lg"
+            className="w-full max-w-sm font-semibold text-base shadow-xl hover:bg-yellow-500"
+            style={{
+              backgroundColor: "#FFDA35",
+              color: "#0C0C0C",
+              border: "2px solid transparent",
+            }}
+          >
+            <a
+              href="https://app.youform.com/forms/2ttsfriz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Inscríbete Ahora
+              <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
+
+          <p
+            className="text-sm font-light tracking-wide opacity-70 max-w-xs"
+            style={{ color: "#D9D9D9" }}
+          >
+            ¡Con toda y que gane el mejor!
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
