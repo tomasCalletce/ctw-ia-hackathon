@@ -126,7 +126,7 @@ export function GeneralInformation() {
                 className="text-sm sm:text-base italic opacity-70"
                 style={{ color: "#888888" }}
               >
-                secret location revealed soon
+                secret location, stay tuned
               </p>
             </div>
           </div>
