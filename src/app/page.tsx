@@ -6,6 +6,7 @@ import { WhatsAppBanner } from "~/app/_components/whatsapp-banner";
 import { SponsorsSection } from "~/app/_components/sponsors-section";
 import { GeneralInformation } from "~/app/_components/general-information";
 import { CommunityPartnersSection } from "~/app/_components/community-partners-section";
+import { FAQSection } from "~/app/_components/faq-section";
 
 export default async function Home() {
   return (
@@ -76,6 +77,7 @@ export default async function Home() {
           <SponsorsSection />
           <GeneralInformation />
           <CommunityPartnersSection />
+          <FAQSection />
           <StartupRegistration />
           <Footer />
         </div>

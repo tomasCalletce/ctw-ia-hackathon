@@ -51,7 +51,7 @@ export function HeroSection() {
               >
                 La hackathon más grande de{" "}
                 <span className="font-medium" style={{ color: "#D9D9D9" }}>
-                  Colombia
+                  Colombia !!!
                 </span>
               </p>
               <ApplyNow />
