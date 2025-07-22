@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { buttonVariants } from "~/components/ui/button";
 
 export function StartupRegistration() {
@@ -97,7 +97,7 @@ export function StartupRegistration() {
               style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
             >
               Registrar mi startup
-              <ArrowRight className="w-5 h-5" />
+              <ExternalLink className="w-5 h-5" />
             </Link>
 
             <p className="text-sm mt-2 opacity-60" style={{ color: "#888888" }}>

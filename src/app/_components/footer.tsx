@@ -3,21 +3,6 @@ import { Github } from "lucide-react";
 export function Footer() {
   return (
     <footer className="w-full py-4 text-xs text-gray-400 text-center border-t border-white/10">
-      {/* Sponsor Section */}
-      <div className="mb-4">
-        <div className="flex items-center justify-center gap-1">
-          <span>¿Quieres ser patrocinador?</span>
-          <a
-            href="https://app.youform.com/forms/4xuvkabi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-300 transition-colors text-yellow-400 underline ml-1"
-          >
-            Únete aquí
-          </a>
-        </div>
-      </div>
-
       {/* Open Source Banner */}
       <div className="">
         <div className="flex items-center justify-center gap-2">

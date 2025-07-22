@@ -7,6 +7,7 @@ import { SponsorsSection } from "~/app/_components/sponsors-section";
 import { GeneralInformation } from "~/app/_components/general-information";
 import { CommunityPartnersSection } from "~/app/_components/community-partners-section";
 import { FAQSection } from "~/app/_components/faq-section";
+import { SponsorCtaSection } from "~/app/_components/sponsor-cta-section";
 
 export default async function Home() {
   return (
@@ -79,6 +80,7 @@ export default async function Home() {
           <CommunityPartnersSection />
           <FAQSection />
           <StartupRegistration />
+          <SponsorCtaSection />
           <Footer />
         </div>
       </main>

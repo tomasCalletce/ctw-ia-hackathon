@@ -49,7 +49,7 @@ export function HeroSection() {
                   className="text-xs font-medium tracking-wider uppercase opacity-70"
                   style={{ color: "#D9D9D9" }}
                 >
-                  Edición Agosto 2025
+                  Edición Bogotá Agosto 23 - 24 2025
                 </span>
               </div>
               <p
