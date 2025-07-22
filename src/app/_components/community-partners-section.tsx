@@ -8,7 +8,7 @@ export function CommunityPartnersSection() {
       url: "https://thegrowthsystem.co/",
     },
     { name: "Pygma", logo: "/pygma.png", url: "https://www.pygma.co/" },
-    { name: "Muno", logo: "/muno.svg", url: "#" },
+    { name: "Muno", logo: "/muno.svg", url: " https://www.munolabs.com/" },
     { name: "aztec", logo: "/aztec.png", url: "https://azteclab.co/talleres" },
     { name: "Quix", logo: "/quix.png", url: "https://quix.work/" },
     { name: "Tribu IA", logo: "/tribu.png", url: "https://tribuia.org/" },
