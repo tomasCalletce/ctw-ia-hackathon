@@ -13,6 +13,7 @@ export function CommunityPartnersSection() {
     { name: "Quix", logo: "/quix.png", url: "https://quix.work/" },
     { name: "Tribu IA", logo: "/tribu.png", url: "https://tribuia.org/" },
     { name: "Lab 10", logo: "/lab-10.png", url: "https://lab10.ai/" },
+    { name: "Nodo", logo: "/nodo.png", url: "https://es.nodoeafit.com/" },
   ];
 
   return (
