@@ -50,15 +50,15 @@ export function CountdownTimer() {
   return (
     <div className="mb-8">
       {/* Countdown Display */}
-      <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-md">
+      <div className="grid grid-cols-4 gap-1 sm:gap-4 max-w-sm sm:max-w-md">
         {timeUnits.map((unit, index) => (
           <div
             key={unit.label}
-            className="text-center p-3 sm:p-4 rounded-xl border border-white/10"
+            className="text-center p-2 sm:p-4 rounded-lg sm:rounded-xl border border-white/10"
             style={{ backgroundColor: "#000000" }}
           >
             <div
-              className="text-2xl sm:text-3xl font-bold mb-1"
+              className="text-lg sm:text-3xl font-bold mb-1"
               style={{
                 color: "#FFDA35",
                 fontFamily:
@@ -68,7 +68,7 @@ export function CountdownTimer() {
               {unit.value.toString().padStart(2, "0")}
             </div>
             <div
-              className="text-xs uppercase tracking-wider font-medium opacity-70"
+              className="text-xs uppercase tracking-tight sm:tracking-wider font-medium opacity-70 leading-tight"
               style={{ color: "#D9D9D9" }}
             >
               {unit.label}
