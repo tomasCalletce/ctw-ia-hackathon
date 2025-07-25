@@ -4,6 +4,7 @@ import { Footer } from "~/app/_components/footer";
 import { StartupRegistration } from "~/app/_components/startup-registration";
 import { WhatsAppBanner } from "~/app/_components/whatsapp-banner";
 import { SponsorsSection } from "~/app/_components/sponsors-section";
+import { TracksSection } from "~/app/_components/tracks-section";
 import { GeneralInformation } from "~/app/_components/general-information";
 import { CommunityPartnersSection } from "~/app/_components/community-partners-section";
 import { FAQSection } from "~/app/_components/faq-section";
@@ -76,7 +77,9 @@ export default async function Home() {
         <div className="relative z-10">
           <HeroSection />
           <SponsorsSection />
+
           <GeneralInformation />
+          <TracksSection />
           <CommunityPartnersSection />
           <FAQSection />
           <StartupRegistration />
