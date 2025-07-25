@@ -2,6 +2,7 @@ import Image from "next/image";
 import Badge3D from "~/app/_components/3d-badge";
 import { BadgeProvider } from "~/contexts/badge-context";
 import { ApplyNow } from "~/app/_components/apply-now";
+import { CountdownTimer } from "~/app/_components/countdown-timer";
 
 export function HeroSection() {
   return (
@@ -53,14 +54,15 @@ export function HeroSection() {
                 </span>
               </div>
               <p
-                className="text-xl lg:text-xl xl:text-2xl leading-relaxed font-light tracking-wide mb-6"
-                style={{ color: "#666666" }}
+                className="text-xl lg:text-xl xl:text-2xl leading-relaxed font-light tracking-wide mb-4"
+                style={{ color: "#888888" }}
               >
                 La hackathon más grande de{" "}
                 <span className="font-medium" style={{ color: "#D9D9D9" }}>
                   Colombia!!!
                 </span>
               </p>
+              <CountdownTimer />
               <ApplyNow />
             </div>
             <div>
