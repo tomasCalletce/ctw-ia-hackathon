@@ -1,5 +1,5 @@
 import { Button } from "~/components/ui/button";
-import { ExternalLink, MessageCircle } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export const ApplyNow = () => {
   return (
@@ -22,7 +22,7 @@ export const ApplyNow = () => {
               rel="noopener noreferrer"
             >
               Inscríbete Ahora
-              <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ExternalLink className="w-4 h-4 ml-2" />
             </a>
           </Button>
 
@@ -45,7 +45,7 @@ export const ApplyNow = () => {
               className="hover:bg-yellow-500/10 transition-colors duration-300"
             >
               Únete al Grupo
-              <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform opacity-70" />
+              <ExternalLink className="w-4 h-4 ml-2" />
             </a>
           </Button>
 
