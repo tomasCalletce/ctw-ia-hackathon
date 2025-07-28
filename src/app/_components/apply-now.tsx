@@ -9,7 +9,7 @@ export const ApplyNow = () => {
           <Button
             asChild
             size="lg"
-            className="w-full max-w-sm font-semibold text-base shadow-xl hover:bg-yellow-500"
+            className="w-full cursor-pointer max-w-sm font-semibold text-base shadow-xl hover:bg-yellow-500"
             style={{
               backgroundColor: "#FFDA35",
               color: "#0C0C0C",
@@ -30,7 +30,7 @@ export const ApplyNow = () => {
             asChild
             variant="outline"
             size="lg"
-            className="w-full max-w-sm font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 group border-2"
+            className="w-full cursor-pointer max-w-sm font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 group border-2"
             style={{
               backgroundColor: "transparent",
               color: "#FFDA35",
