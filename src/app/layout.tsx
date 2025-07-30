@@ -9,7 +9,7 @@ export const metadata = {
   metadataBase: new URL("https://ctw-ia-hackathon.vercel.app"),
   title: "IA HACKATHON",
   description:
-    "IA HACKATHON by Colombia Tech Fest and Makers. La plataforma de innovación de la región.",
+    "La Hackathon oficial de Colombia Tech Week, Colombia Tech Fest y Makers. Inscríbete para competir en la competencia de tecnología más grande de Colombia",
   openGraph: {
     images: "/social.png",
   },
