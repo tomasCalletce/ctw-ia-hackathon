@@ -7,6 +7,26 @@ export function WorkshopsSection() {
       embedId: "evt-gIFBydIfBOeIKoR",
       lumaUrl: "https://lu.ma/7xmwzqze",
     },
+    {
+      date: "Agosto 7",
+      embedId: "evt-GVnGNLiVRVh4vca",
+      lumaUrl: "https://lu.ma/fx0e0rp3",
+    },
+    {
+      date: "Agosto 8",
+      embedId: "evt-x6LLgLv3nl1uksC",
+      lumaUrl: "https://lu.ma/wcfzykgb",
+    },
+    {
+      date: "Agosto 14",
+      embedId: "evt-PIanCiPMYPwyfu6",
+      lumaUrl: "https://lu.ma/8dre258s",
+    },
+    {
+      date: "Agosto 19",
+      embedId: "evt-W9sHEKIi22CWR4k",
+      lumaUrl: "https://lu.ma/7gjn4tv3",
+    },
   ];
 
   return (
@@ -52,7 +72,7 @@ export function WorkshopsSection() {
                   <iframe
                     src={`https://lu.ma/embed/event/${workshop.embedId}/simple`}
                     width="100%"
-                    height="430"
+                    height="460"
                     frameBorder="0"
                     style={{
                       border: "1px solid rgba(191, 203, 218, 0.2)",

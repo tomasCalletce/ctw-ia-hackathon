@@ -53,7 +53,7 @@ export function WorkshopsHero() {
                 letterSpacing: "0.02em",
               }}
             >
-              Prepárate para la{" "}
+              Prepárate para IA{" "}
               <span
                 className="font-bold relative inline-block"
                 style={{
@@ -63,7 +63,7 @@ export function WorkshopsHero() {
                   letterSpacing: "0.02em",
                 }}
               >
-                hackathon
+                Hackathon
                 <div
                   className="absolute -bottom-1 left-0 w-full h-0.5 animate-pulse"
                   style={{ backgroundColor: "#FFDA35", opacity: 0.3 }}
