@@ -1,16 +1,23 @@
 import { HydrateClient } from "~/trpc/server";
-import { HeroSection } from "~/app/_components/hero-section";
 import { Footer } from "~/app/_components/footer";
-import { StartupRegistration } from "~/app/_components/startup-registration";
 import { WhatsAppBanner } from "~/app/_components/whatsapp-banner";
-import { SponsorsSection } from "~/app/_components/sponsors-section";
-import { TracksSection } from "~/app/_components/tracks-section";
-import { GeneralInformation } from "~/app/_components/general-information";
-import { CommunityPartnersSection } from "~/app/_components/community-partners-section";
-import { FAQSection } from "~/app/_components/faq-section";
-import { SponsorCtaSection } from "~/app/_components/sponsor-cta-section";
+import { WorkshopsSection } from "~/app/_components/workshops-section";
+import { WorkshopsHero } from "~/app/_components/workshops-hero";
 
-export default async function Home() {
+export const metadata = {
+  title: "Workshops - IA HACKATHON",
+  description:
+    "Únete a los workshops preparatorios para la IA Hackathon. Aprende sobre inteligencia artificial, desarrollo de aplicaciones y tecnologías emergentes.",
+  openGraph: {
+    images: "/social.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: "/social.png",
+  },
+};
+
+export default async function WorkshopsPage() {
   return (
     <HydrateClient>
       <main
@@ -75,14 +82,8 @@ export default async function Home() {
         </div>
         <WhatsAppBanner />
         <div className="relative z-10">
-          <HeroSection />
-          <SponsorsSection />
-          <GeneralInformation />
-          <TracksSection />
-          <CommunityPartnersSection />
-          <FAQSection />
-          <StartupRegistration />
-          <SponsorCtaSection />
+          <WorkshopsHero />
+          <WorkshopsSection />
           <Footer />
         </div>
       </main>
