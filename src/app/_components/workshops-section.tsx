@@ -70,9 +70,8 @@ export function WorkshopsSection() {
                   onClick={() => window.open(workshop.lumaUrl, "_blank")}
                 >
                   <iframe
+                    className="w-full h-[800px] md:h-[460px]"
                     src={`https://lu.ma/embed/event/${workshop.embedId}/simple`}
-                    width="100%"
-                    height="460"
                     frameBorder="0"
                     style={{
                       border: "1px solid rgba(191, 203, 218, 0.2)",
