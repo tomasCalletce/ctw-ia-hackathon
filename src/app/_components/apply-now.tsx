@@ -44,7 +44,7 @@ export const ApplyNow = () => {
               rel="noopener noreferrer"
               className="hover:bg-yellow-500/10 transition-colors duration-300"
             >
-              Únete al Grupo
+              Grupo WhatsApp
               <ExternalLink className="w-4 h-4 ml-2" />
             </a>
           </Button>
