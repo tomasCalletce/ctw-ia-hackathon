@@ -23,6 +23,16 @@ export function WorkshopsSection() {
       lumaUrl: "https://lu.ma/8dre258s",
     },
     {
+      date: "Agosto 15",
+      embedId: "evt-n1970q1b",
+      lumaUrl: "https://lu.ma/n1970q1b",
+    },
+    {
+      date: "Agosto 18",
+      embedId: "evt-xamqoxh2",
+      lumaUrl: "https://lu.ma/xamqoxh2",
+    },
+    {
       date: "Agosto 19",
       embedId: "evt-W9sHEKIi22CWR4k",
       lumaUrl: "https://lu.ma/7gjn4tv3",

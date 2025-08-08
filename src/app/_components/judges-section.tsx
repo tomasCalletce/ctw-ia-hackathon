@@ -4,6 +4,7 @@ interface JudgeInfo {
   name: string;
   role: string;
   image: string;
+  linkedin: string;
 }
 
 export function JudgesSection() {
@@ -12,16 +13,19 @@ export function JudgesSection() {
       name: "Adrian Mastronardi",
       role: "CTO Habi",
       image: "/Juez-AdrianMastronardi-1-1.png",
+      linkedin: "https://www.linkedin.com/in/amastronardi/",
     },
     {
       name: "Camila Rueda",
       role: "Program Director & Partner @ Rockstart",
       image: "/Juez-CamilaRueda-1-1.png",
+      linkedin: "https://www.linkedin.com/in/maria-camila-rueda/",
     },
     {
       name: "Diego Vargas",
       role: "VC @ NXTP",
       image: "/Juez-DiegoVargas-1-1.png",
+      linkedin: "https://www.linkedin.com/in/diego-vargas-7b1ab01b8/",
     },
   ];
 
@@ -76,9 +80,14 @@ export function JudgesSection() {
           {/* Judges Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {judges.map((judge) => (
-              <div
+              <a
                 key={judge.name}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300"
+                href={judge.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Abrir LinkedIn de ${judge.name}`}
+                title={`LinkedIn de ${judge.name}`}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer block"
                 style={{ backgroundColor: "#0A0A0A" }}
               >
                 {/* Gradient border wrapper */}
@@ -135,7 +144,7 @@ export function JudgesSection() {
                     />
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
