@@ -9,6 +9,7 @@ import { GeneralInformation } from "~/app/_components/general-information";
 import { CommunityPartnersSection } from "~/app/_components/community-partners-section";
 import { FAQSection } from "~/app/_components/faq-section";
 import { SponsorCtaSection } from "~/app/_components/sponsor-cta-section";
+import { JudgesSection } from "~/app/_components/judges-section";
 
 export default async function Home() {
   return (
@@ -77,6 +78,7 @@ export default async function Home() {
         <div className="relative z-10">
           <HeroSection />
           <SponsorsSection />
+          <JudgesSection />
           <GeneralInformation />
           <TracksSection />
           <CommunityPartnersSection />
