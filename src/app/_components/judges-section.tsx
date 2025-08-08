@@ -87,7 +87,7 @@ export function JudgesSection() {
                 rel="noopener noreferrer"
                 aria-label={`Abrir LinkedIn de ${judge.name}`}
                 title={`LinkedIn de ${judge.name}`}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer block"
+                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer block"
                 style={{ backgroundColor: "#0A0A0A" }}
               >
                 {/* Gradient border wrapper */}
