@@ -24,12 +24,12 @@ export function WorkshopsSection() {
     },
     {
       date: "Agosto 15",
-      embedId: "evt-n1970q1b",
+      embedId: "evt-15vmIvL3eB3Svnk",
       lumaUrl: "https://lu.ma/n1970q1b",
     },
     {
       date: "Agosto 18",
-      embedId: "evt-xamqoxh2",
+      embedId: "evt-WuYOuWAOsrUbMQR",
       lumaUrl: "https://lu.ma/xamqoxh2",
     },
     {
