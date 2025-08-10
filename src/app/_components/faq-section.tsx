@@ -9,7 +9,7 @@ import {
 
 export function FAQSection() {
   const [openItems, setOpenItems] = useState<Set<number>>(
-    new Set([0, 1, 2, 3])
+    new Set([0, 1, 2, 3, 4, 5, 6, 7])
   );
 
   const faqData = [
