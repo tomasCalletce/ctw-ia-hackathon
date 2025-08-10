@@ -19,6 +19,16 @@ export function SponsorsSection() {
       logo: "/publicis-sapien.png",
       website: "https://publicissapient.com",
     },
+    {
+      name: "Wallbit",
+      logo: "/Wallbit.png",
+      website: "https://www.wallbit.io/",
+    },
+    {
+      name: "Factored",
+      logo: "/Factored.png",
+      website: "https://www.factored.ai/",
+    },
   ];
 
   return (
@@ -56,14 +66,14 @@ export function SponsorsSection() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-0 max-w-fit mx-auto border border-white/20">
+          <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
             {allSponsors.map((sponsor, index) => (
               <a
                 key={index}
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative aspect-[3/2] flex items-center justify-center  border-r border-b border-white/20 last:border-r-0 transition-all duration-300 hover:bg-white/5 cursor-pointer"
+                className="group relative w-[160px] sm:w-[200px] lg:w-[220px] h-28 sm:h-36 lg:h-40 flex items-center justify-center rounded-md border border-white/20 transition-all duration-300 hover:bg-white/5 cursor-pointer"
                 style={{ backgroundColor: "transparent" }}
               >
                 <Image
@@ -71,7 +81,7 @@ export function SponsorsSection() {
                   alt={sponsor.name}
                   width={800}
                   height={480}
-                  className="w-full h-full object-contain "
+                  className="max-h-full max-w-[85%] object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                 />
               </a>
             ))}

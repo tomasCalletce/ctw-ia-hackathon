@@ -7,8 +7,15 @@ export function TracksSection() {
       title: "Agentic Apps in WhatsApp",
       description: "Build AI-powered chat apps using WhatsApp API.",
       examples: [
-        "AI meeting scheduler for WhatsApp",
-        "Personal finance manager via WhatsApp",
+        "Asesor personal para comprar mi primera casa",
+        "Planificador de ahorro para compra de vivienda",
+        "Verificador de confianza del inmueble o vendedor",
+        "Evaluador de riesgos patrimoniales",
+        "Traductor inmobiliario",
+        "Asistente de revisión de contratos",
+        "Guía para usar bien el patrimonio",
+        "Actualizador automático del proceso de venta o compra",
+        "Conserje de trámites",
       ],
       sponsor: {
         name: "Habi",
@@ -17,11 +24,18 @@ export function TracksSection() {
     },
     {
       id: 2,
-      title: "MCP Servers",
-      description: "Create MCP servers that enhance LLMs with tools and data.",
+      title: "MCP Servers & v0 Platform API",
+      description:
+        "Create MCP servers that enhance. Create apps using v0 Platform API.",
       examples: [
-        "LinkedIn research MCP server",
-        "SEO analyzer with Google Analytics MCP",
+        "PR Review efímero con preview en vivo",
+        "Charts on demand",
+        "PDF-to-app instantáneo",
+        "Copy any website with just a link",
+        "Observability coach",
+        "Excalidraw-to-app",
+        "Figma-to-app",
+        "PPT-to-interactive website",
       ],
       sponsor: {
         name: "V0",
@@ -183,6 +197,22 @@ export function TracksSection() {
                   >
                     Ejemplos:
                   </h4>
+                  {track.sponsor?.name === "Habi" && (
+                    <p
+                      className="text-xs opacity-70"
+                      style={{ color: "#888888" }}
+                    >
+                      Ideas y oportunidades identificadas por Habi.
+                    </p>
+                  )}
+                  {track.sponsor?.name === "V0" && (
+                    <p
+                      className="text-xs opacity-70"
+                      style={{ color: "#888888" }}
+                    >
+                      Ideas y oportunidades identificadas por v0 by Vercel.
+                    </p>
+                  )}
                   <ul className="space-y-2">
                     {track.examples.map((example, index) => (
                       <li
