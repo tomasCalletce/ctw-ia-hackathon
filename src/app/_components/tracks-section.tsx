@@ -183,7 +183,7 @@ export function TracksSection() {
 
                 {/* Track Description */}
                 <p
-                  className="text-lg leading-relaxed mb-6"
+                  className="text-lg leading-relaxed mb-6 h-20"
                   style={{ color: "#B0B0B0" }}
                 >
                   {track.description}
