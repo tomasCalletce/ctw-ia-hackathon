@@ -83,7 +83,7 @@ export default async function Home() {
           <TracksSection />
           <CommunityPartnersSection />
           <FAQSection />
-          <StartupRegistration />
+          {/* <StartupRegistration /> */}
           <SponsorCtaSection />
           <Footer />
         </div>
