@@ -43,6 +43,16 @@ export function FAQSection() {
       answer:
         "Recuerda que esto es un evento de 24 horas. Vamos a tener comida, agua, café y todo lo que puedas necesitar, pero igual recuerda llevar ropa cómoda, tu computador y el cargador. Si quieres llevar snacks extra, dale sin problema.",
     },
+    {
+      question: "¿Puedo traer código ya desarrollado?",
+      answer:
+        "No, solo puedes traer la idea. Los jueces evaluarán únicamente el trabajo realizado durante las 24 horas del evento.",
+    },
+    {
+      question: "¿De quién son los derechos de propiedad intelectual?",
+      answer:
+        "Los participantes retienen la titularidad completa de todos los derechos de propiedad intelectual sobre sus desarrollos. Ni los organizadores ni los patrocinadores del hackathon adquieren ningún derecho sobre las creaciones de los participantes. Para efectos de evaluación, se requiere que los proyectos sean de acceso público durante el evento (código, documentación y materiales). Esta visibilidad es exclusivamente para permitir la valoración del jurado y no implica transferencia alguna de derechos.",
+    },
   ];
 
   const toggleQuestion = (index: number) => {
