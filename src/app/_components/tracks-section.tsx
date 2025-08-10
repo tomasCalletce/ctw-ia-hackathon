@@ -46,7 +46,7 @@ export function TracksSection() {
               className="text-xs sm:text-sm font-medium tracking-wider uppercase opacity-70"
               style={{ color: "#D9D9D9" }}
             >
-              Hackathon Tracks
+              Tracks del Hackathon
             </span>
             <div
               className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
@@ -88,8 +88,10 @@ export function TracksSection() {
               className="text-lg lg:text-xl leading-relaxed font-light max-w-3xl mx-auto px-2 mt-6"
               style={{ color: "#B0B0B0" }}
             >
-              Escoge tu track preferido. Tu proyecto debe trabajar sobre alguno
-              de los 2 tracks.
+              Cada equipo debe escoger uno de los 2 tracks disponibles. En lugar
+              de retos predefinidos, buscamos que resuelvan problemas reales
+              usando tecnologías de cualquiera de estos temas. El día del evento
+              confirmaremos el track elegido por cada equipo.
             </p>
           </div>
 

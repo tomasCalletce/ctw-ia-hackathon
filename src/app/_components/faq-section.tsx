@@ -19,7 +19,7 @@ export function FAQSection() {
         "Las inscripciones son individuales. Todas las personas del equipo deben aplicar para participar por separado llenando el formulario de registro.",
     },
     {
-      question: "¿Qué premios va a haber?",
+      question: "¿Qué premios hay?",
       answer:
         "Los premios los estaremos anunciando en los próximos días. Mantente atento a nuestras redes sociales para conocer todos los detalles.",
     },
@@ -32,6 +32,16 @@ export function FAQSection() {
       question: "¿Cómo funcionan las inscripciones?",
       answer:
         "Primero debes aplicar para participar llenando el formulario que encuentras en la parte superior de la página. Después nuestro equipo revisará las aplicaciones e invitará a los mejores 150 participantes.",
+    },
+    {
+      question: "¿Cómo puedo formar mi equipo?",
+      answer:
+        "Como participante seleccionado, es tu responsabilidad armar tu equipo. Organizaremos dinámicas y llamadas online para que se conozcan y hagan match, pero es clave que participes activamente en el grupo para crear un equipo ganador.",
+    },
+    {
+      question: "¿Qué cosas necesito llevar?",
+      answer:
+        "Recuerda que esto es un evento de 24 horas. Vamos a tener comida, agua, café y todo lo que puedas necesitar, pero igual recuerda llevar ropa cómoda, tu computador y el cargador. Si quieres llevar snacks extra, dale sin problema.",
     },
   ];
 
