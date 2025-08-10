@@ -24,8 +24,8 @@ export function TracksSection() {
         "SEO analyzer with Google Analytics MCP",
       ],
       sponsor: {
-        name: "CTW",
-        logo: null,
+        name: "V0",
+        logo: "/v0.png",
       },
     },
   ];

@@ -1,3 +1,5 @@
+import { MapPin, ExternalLink } from "lucide-react";
+
 export function GeneralInformation() {
   return (
     <section className="pb-16 md:pb-28 relative overflow-hidden">
@@ -123,10 +125,23 @@ export function GeneralInformation() {
                 Bogotá, Colombia
               </p>
               <p
-                className="text-sm sm:text-base italic opacity-70"
+                className="text-sm sm:text-base italic opacity-70 flex items-center justify-center gap-2"
                 style={{ color: "#888888" }}
               >
-                secret location, stay tuned
+                <MapPin
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  style={{ color: "#FFDA35" }}
+                />
+                <a
+                  href="https://maps.app.goo.gl/4UZ69BveRao7csBF6?g_st=com.google.maps.preview.copy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:opacity-90 inline-flex items-center gap-1"
+                  style={{ color: "#FFDA35" }}
+                >
+                  Universidad Militar Nueva Granada
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
               </p>
             </div>
           </div>
