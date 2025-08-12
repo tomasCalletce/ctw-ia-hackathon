@@ -90,7 +90,7 @@ export function JudgesSection() {
           </div>
 
           {/* Judges Grid (match sponsors layout: centered flex wrap) */}
-          <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-6 max-w-6xl mx-auto">
             {judges.map((judge) => (
               <a
                 key={judge.name}
@@ -99,7 +99,7 @@ export function JudgesSection() {
                 rel="noopener noreferrer"
                 aria-label={`Abrir LinkedIn de ${judge.name}`}
                 title={`LinkedIn de ${judge.name}`}
-                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 w-[260px] sm:w-[300px]"
+                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 w-[92vw] max-w-[420px] sm:w-[360px] md:w-[300px] lg:w-[280px]"
                 style={{ backgroundColor: "#0A0A0A" }}
               >
                 {/* Gradient border wrapper */}
@@ -128,17 +128,14 @@ export function JudgesSection() {
                       }}
                     />
                     {/* Bottom info panel (centered, higher contrast) */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] sm:w-[85%]">
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[92%] sm:w-[88%]">
                       <div className="backdrop-blur-sm bg-black/70 border border-white/10 px-4 py-3 md:py-3.5 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
                         <div className="text-center space-y-1">
-                          <div
-                            className="font-semibold leading-snug tracking-wide text-white"
-                            style={{ fontSize: "0.95rem" }}
-                          >
+                          <div className="font-semibold leading-snug tracking-wide text-white text-[1.05rem] sm:text-[0.95rem]">
                             {judge.name}
                           </div>
                           <div
-                            className="text-xs sm:text-sm leading-snug"
+                            className="text-sm sm:text-sm leading-snug"
                             style={{ color: "#E5E5E5" }}
                           >
                             {judge.role}
