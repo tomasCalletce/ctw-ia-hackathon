@@ -6,16 +6,19 @@ export function WorkshopsSection() {
       date: "Agosto 6",
       embedId: "evt-gIFBydIfBOeIKoR",
       lumaUrl: "https://lu.ma/7xmwzqze",
+      recordingUrl: "https://www.youtube.com/watch?v=vZlWvpoq1Hw&t=7s",
     },
     {
       date: "Agosto 7",
       embedId: "evt-GVnGNLiVRVh4vca",
       lumaUrl: "https://lu.ma/fx0e0rp3",
+      recordingUrl: "https://www.youtube.com/watch?v=r9qrLsx4osU",
     },
     {
       date: "Agosto 8",
       embedId: "evt-x6LLgLv3nl1uksC",
       lumaUrl: "https://lu.ma/wcfzykgb",
+      recordingUrl: "https://www.youtube.com/watch?v=14PdsS60mz4&t=1s",
     },
     {
       date: "Agosto 14",
@@ -26,16 +29,24 @@ export function WorkshopsSection() {
       date: "Agosto 15",
       embedId: "evt-15vmIvL3eB3Svnk",
       lumaUrl: "https://lu.ma/n1970q1b",
+      tag: "Nuevo",
     },
     {
       date: "Agosto 18",
       embedId: "evt-WuYOuWAOsrUbMQR",
       lumaUrl: "https://lu.ma/xamqoxh2",
+      tag: "Nuevo",
     },
     {
       date: "Agosto 19",
       embedId: "evt-W9sHEKIi22CWR4k",
       lumaUrl: "https://lu.ma/7gjn4tv3",
+    },
+    {
+      date: "Agosto 20",
+      embedId: "evt-SzmZ2Kan0gg6A9D",
+      lumaUrl: "https://lu.ma/wy13k631",
+      tag: "Nuevo",
     },
   ];
 
@@ -70,6 +81,25 @@ export function WorkshopsSection() {
                       className="w-2 h-2 rounded-full"
                       style={{ backgroundColor: "#FFDA35" }}
                     />
+                    {workshop.tag && (
+                      <span
+                        className="ml-2 text-xs font-semibold px-3 py-1 rounded-full"
+                        style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
+                      >
+                        {workshop.tag}
+                      </span>
+                    )}
+                    {workshop.recordingUrl && (
+                      <a
+                        href={workshop.recordingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-2 text-xs font-semibold px-3 py-1 rounded-full border border-white/30 hover:border-white/50 hover:bg-white/5 transition-colors"
+                        style={{ color: "#D9D9D9" }}
+                      >
+                        Ver grabación
+                      </a>
+                    )}
                   </div>
                 </div>
 
