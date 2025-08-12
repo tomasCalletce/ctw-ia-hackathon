@@ -14,6 +14,8 @@ export function CommunityPartnersSection() {
     { name: "Tribu IA", logo: "/tribu.png", url: "https://tribuia.org/" },
     { name: "Lab 10", logo: "/lab-10.png", url: "https://lab10.ai/" },
     { name: "Nodo", logo: "/nodo.png", url: "https://es.nodoeafit.com/" },
+    { name: "Bogotá", logo: "/Bogota.png", url: "#" },
+    { name: "Invest in Bogotá", logo: "/invest_bogota.png", url: "#" },
   ];
 
   return (
@@ -59,14 +61,14 @@ export function CommunityPartnersSection() {
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-center border border-white/20">
+          <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
             {allPartners.map((partner, index) => (
               <a
                 key={index}
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative aspect-[3/2] w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex items-center justify-center border-r border-b border-white/20 transition-all duration-300 hover:bg-white/5 cursor-pointer"
+                className="group relative w-[160px] sm:w-[200px] lg:w-[220px] h-28 sm:h-36 lg:h-40 flex items-center justify-center rounded-md border border-white/20 transition-all duration-300 hover:bg-white/5 cursor-pointer"
                 style={{ backgroundColor: "transparent" }}
               >
                 <Image
@@ -74,7 +76,7 @@ export function CommunityPartnersSection() {
                   alt={partner.name}
                   width={800}
                   height={480}
-                  className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  className="max-h-full max-w-[85%] object-contain opacity-80 group-hover:opacity-100 transition-opacity"
                 />
               </a>
             ))}

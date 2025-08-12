@@ -29,6 +29,16 @@ export function SponsorsSection() {
       logo: "/Factored.png",
       website: "https://www.factored.ai/",
     },
+    {
+      name: "GoodRec",
+      logo: "/good-rec.png",
+      website: "https://www.goodrec.com/",
+    },
+    {
+      name: "Trez",
+      logo: "/Trez.png",
+      website: "https://es.trez.co/",
+    },
   ];
 
   return (
