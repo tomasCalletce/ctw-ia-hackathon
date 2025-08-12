@@ -27,6 +27,18 @@ export function JudgesSection() {
       image: "/Juez-DiegoVargas-1-1.png",
       linkedin: "https://www.linkedin.com/in/diego-vargas-7b1ab01b8/",
     },
+    {
+      name: "Lewis Black",
+      role: "Cofounder and CEO Good Rec",
+      image: "/Lewis Black.png",
+      linkedin: "https://www.goodrec.com/",
+    },
+    {
+      name: "Midori Koide",
+      role: "Cofounder Good Rec",
+      image: "/Midori Koide.png",
+      linkedin: "https://www.goodrec.com/",
+    },
   ];
 
   return (
@@ -77,8 +89,8 @@ export function JudgesSection() {
             </p>
           </div>
 
-          {/* Judges Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {/* Judges Grid (match sponsors layout: centered flex wrap) */}
+          <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
             {judges.map((judge) => (
               <a
                 key={judge.name}
@@ -87,7 +99,7 @@ export function JudgesSection() {
                 rel="noopener noreferrer"
                 aria-label={`Abrir LinkedIn de ${judge.name}`}
                 title={`LinkedIn de ${judge.name}`}
-                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 block"
+                className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 w-[260px] sm:w-[300px]"
                 style={{ backgroundColor: "#0A0A0A" }}
               >
                 {/* Gradient border wrapper */}
@@ -115,19 +127,19 @@ export function JudgesSection() {
                           "radial-gradient(80% 80% at 50% 20%, transparent 0%, rgba(0,0,0,0.15) 100%)",
                       }}
                     />
-                    {/* Bottom glass panel for name and role */}
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <div className="backdrop-blur-md bg-white/5 border border-white/10 px-4 py-3 md:py-3.5 rounded-xl shadow-lg">
+                    {/* Bottom info panel (centered, higher contrast) */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] sm:w-[85%]">
+                      <div className="backdrop-blur-sm bg-black/70 border border-white/10 px-4 py-3 md:py-3.5 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
                         <div className="text-center space-y-1">
                           <div
-                            className="font-semibold leading-snug tracking-wide"
-                            style={{ color: "#D9D9D9", fontSize: "0.95rem" }}
+                            className="font-semibold leading-snug tracking-wide text-white"
+                            style={{ fontSize: "0.95rem" }}
                           >
                             {judge.name}
                           </div>
                           <div
                             className="text-xs sm:text-sm leading-snug"
-                            style={{ color: "#B0B0B0" }}
+                            style={{ color: "#E5E5E5" }}
                           >
                             {judge.role}
                           </div>
