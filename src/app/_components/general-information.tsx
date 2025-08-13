@@ -1,4 +1,4 @@
-import { MapPin, ExternalLink } from "lucide-react";
+import { MapPin, ExternalLink, Trophy } from "lucide-react";
 
 export function GeneralInformation() {
   return (
@@ -143,6 +143,59 @@ export function GeneralInformation() {
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </p>
+            </div>
+          </div>
+
+          {/* Prizes */}
+          <div className="mt-16 sm:mt-20">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <Trophy
+                  className="w-6 h-6 sm:w-7 sm:h-7"
+                  style={{ color: "#FFDA35" }}
+                />
+              </div>
+
+              <div
+                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, #FFDA35 0%, #C8A600 100%)",
+                }}
+              >
+                $4,000 USD
+              </div>
+              <div
+                className="mx-auto mt-2 h-1 w-24 rounded-full animate-pulse"
+                style={{ backgroundColor: "#FFDA35", opacity: 0.4 }}
+              />
+
+              <p
+                className="mt-4 text-sm sm:text-base font-light"
+                style={{ color: "#D9D9D9" }}
+              >
+                + más créditos en
+              </p>
+              <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
+                <span
+                  className="rounded-full border border-white/15 px-3 py-1 text-xs sm:text-sm"
+                  style={{ color: "#FFDA35" }}
+                >
+                  V0
+                </span>
+                <span
+                  className="rounded-full border border-white/15 px-3 py-1 text-xs sm:text-sm"
+                  style={{ color: "#FFDA35" }}
+                >
+                  Supabase
+                </span>
+                <span
+                  className="rounded-full border border-white/15 px-3 py-1 text-xs sm:text-sm"
+                  style={{ color: "#FFDA35" }}
+                >
+                  Firecrawl
+                </span>
+              </div>
             </div>
           </div>
         </div>
