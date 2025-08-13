@@ -15,7 +15,7 @@ export function CommunityPartnersSection() {
     { name: "Lab 10", logo: "/lab-10.png", url: "https://lab10.ai/" },
     { name: "Nodo", logo: "/nodo.png", url: "https://es.nodoeafit.com/" },
     { name: "Bogotá", logo: "/Bogota.png", url: "#" },
-    { name: "Invest in Bogotá", logo: "/invest_bogota.png", url: "#" },
+    { name: "Invest in Bogotá", logo: "/invest_bogota_white.png", url: "#" },
   ];
 
   return (
