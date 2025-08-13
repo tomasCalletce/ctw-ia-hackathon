@@ -29,13 +29,13 @@ export function JudgesSection() {
     },
     {
       name: "Lewis Black",
-      role: "Cofounder and CEO Good Rec",
+      role: "Cofounder and CEO GoodRec",
       image: "/Lewis Black.png",
       linkedin: "https://www.goodrec.com/",
     },
     {
       name: "Midori Koide",
-      role: "Cofounder Good Rec",
+      role: "Cofounder GoodRec",
       image: "/Midori Koide.png",
       linkedin: "https://www.goodrec.com/",
     },
