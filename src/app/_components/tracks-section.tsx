@@ -24,9 +24,8 @@ export function TracksSection() {
     },
     {
       id: 2,
-      title: "MCP Servers & v0 Platform API",
-      description:
-        "Create MCP servers that enhance. Create apps using v0 Platform API.",
+      title: "AI Wrappers",
+      description: "AI powered apps all the way",
       examples: [
         "PR Review efímero con preview en vivo",
         "Charts on demand",
