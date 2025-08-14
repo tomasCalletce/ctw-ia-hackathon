@@ -39,6 +39,16 @@ export function SponsorsSection() {
       logo: "/Trez.png",
       website: "https://es.trez.co/",
     },
+    {
+      name: "n8n",
+      logo: "/n8n.png",
+      website: "https://n8n.io/",
+    },
+    {
+      name: "OpenRouter",
+      logo: "/openrouter.png",
+      website: "https://openrouter.ai/",
+    },
   ];
 
   return (
