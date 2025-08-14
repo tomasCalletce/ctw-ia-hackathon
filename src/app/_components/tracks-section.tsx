@@ -4,7 +4,7 @@ export function TracksSection() {
   const tracks = [
     {
       id: 1,
-      title: "Best Agentic Apps in WhatsApp",
+      title: "Best Agentic App in WhatsApp",
       description:
         "WhatsApp is by far the most used platform in LATAM. Build apps where the main UI is WhatsApp.",
       examples: [
@@ -25,8 +25,9 @@ export function TracksSection() {
     },
     {
       id: 2,
-      title: "AI Wrappers",
-      description: "AI powered apps all the way",
+      title: "Best AI product",
+      description:
+        "General track for any AI powered app. Build fast and ship fast with v0.",
       examples: [
         "PR Review efímero con preview en vivo",
         "Charts on demand",
