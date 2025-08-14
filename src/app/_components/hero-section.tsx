@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <BadgeProvider>
       <section
-        className="h-[80vh] flex items-center justify-center relative overflow-hidden"
+        className="h-[100vh] md:h-[80vh] flex items-center justify-center relative overflow-hidden"
         style={{ backgroundColor: "transparent" }}
       >
         <div
