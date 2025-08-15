@@ -43,7 +43,7 @@ export function JudgesSection() {
       name: "Esteban Suárez",
       role: "Developer Relations - v0, Vercel",
       image: "/esteban.png",
-      linkedin: "https://www.linkedin.com/in/esteban-suarez/",
+      linkedin: "https://www.linkedin.com/in/estebansrz/",
     },
   ];
 
