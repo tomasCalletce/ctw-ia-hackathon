@@ -6,7 +6,7 @@ export function WorkshopsSection() {
       date: "Agosto 6",
       embedId: "evt-gIFBydIfBOeIKoR",
       lumaUrl: "https://lu.ma/7xmwzqze",
-      recordingUrl: "https://www.youtube.com/watch?v=vZlWvpoq1Hw&t=7s",
+      recordingUrl: "https://www.youtube.com/watch?v=vZlWvpoq1Hw&t",
     },
     {
       date: "Agosto 7",
