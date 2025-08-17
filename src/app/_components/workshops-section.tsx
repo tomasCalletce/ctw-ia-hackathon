@@ -18,18 +18,19 @@ export function WorkshopsSection() {
       date: "Agosto 8",
       embedId: "evt-x6LLgLv3nl1uksC",
       lumaUrl: "https://lu.ma/wcfzykgb",
-      recordingUrl: "https://www.youtube.com/watch?v=14PdsS60mz4&t=1s",
+      recordingUrl: "https://www.youtube.com/watch?v=14PdsS60mz4&t",
     },
     {
       date: "Agosto 14",
       embedId: "evt-PIanCiPMYPwyfu6",
       lumaUrl: "https://lu.ma/8dre258s",
+      recordingUrl: "https://www.youtube.com/watch?v=PIcI2_8Xn9U&t",
     },
     {
       date: "Agosto 15",
       embedId: "evt-15vmIvL3eB3Svnk",
       lumaUrl: "https://lu.ma/n1970q1b",
-      tag: "Nuevo",
+      recordingUrl: "https://www.youtube.com/watch?v=0LiHXbthHvY",
     },
     {
       date: "Agosto 18",
