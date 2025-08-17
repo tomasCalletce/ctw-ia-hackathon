@@ -12,6 +12,7 @@ import { SponsorCtaSection } from "~/app/_components/sponsor-cta-section";
 import { JudgesSection } from "~/app/_components/judges-section";
 import { EvaluationCriteriaSection } from "~/app/_components/evaluation-criteria-section";
 import { DeliveryProcessSection } from "~/app/_components/delivery-process-section";
+import { AgendaSection } from "~/app/_components/agenda-section";
 
 export default async function Home() {
   return (
@@ -83,6 +84,7 @@ export default async function Home() {
           <JudgesSection />
           <GeneralInformation />
           <TracksSection />
+          <AgendaSection />
           <EvaluationCriteriaSection />
           <DeliveryProcessSection />
           <CommunityPartnersSection />
