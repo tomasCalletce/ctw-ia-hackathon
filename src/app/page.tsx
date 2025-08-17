@@ -11,6 +11,7 @@ import { FAQSection } from "~/app/_components/faq-section";
 import { SponsorCtaSection } from "~/app/_components/sponsor-cta-section";
 import { JudgesSection } from "~/app/_components/judges-section";
 import { EvaluationCriteriaSection } from "~/app/_components/evaluation-criteria-section";
+import { DeliveryProcessSection } from "~/app/_components/delivery-process-section";
 
 export default async function Home() {
   return (
@@ -83,6 +84,7 @@ export default async function Home() {
           <GeneralInformation />
           <TracksSection />
           <EvaluationCriteriaSection />
+          <DeliveryProcessSection />
           <CommunityPartnersSection />
           <FAQSection />
           {/* <StartupRegistration /> */}

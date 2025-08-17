@@ -1,37 +1,54 @@
-export function EvaluationCriteriaSection() {
-  const criteria = [
+export function DeliveryProcessSection() {
+  const deliveryRequirements = [
     {
       id: 1,
-      title: "Innovation & Impact",
-      description: "¿Resuelve un problema real de forma diferente?",
-      weight: "35%",
-      icon: "💡",
+      title: "Video Demo",
+      description:
+        "Máximo 2 minutos, entregado por la plataforma de YouTube. Recuerde que el video debe ser público",
+      icon: "🎥",
+      required: true,
     },
     {
       id: 2,
-      title: "Technical Execution",
-      description: "Código limpio, demo reproducible y excelencia técnica",
-      weight: "30%",
-      icon: "⚙️",
+      title: "Video Pitch",
+      description:
+        "Máximo 2 minutos, entregado por la plataforma de YouTube. Recuerde que el video debe ser público",
+      icon: "🎤",
+      required: true,
     },
     {
       id: 3,
-      title: "Viability",
-      description: "¿Puede esto convertirse en un producto?",
-      weight: "20%",
-      icon: "🚀",
+      title: "Pitch Deck",
+      description: "Máximo 10 slides (opcional)",
+      icon: "📊",
+      required: false,
     },
     {
       id: 4,
-      title: "Pitch & UX",
-      description: "Mensaje claro y efectivo. ¿Vende?",
-      weight: "15%",
-      icon: "🎯",
+      title: "Repositorio GitHub",
+      description:
+        "Link del repositorio público en GitHub, con readme, licencia, y instrucciones de setup",
+      icon: "💻",
+      required: true,
+    },
+    {
+      id: 5,
+      title: "Producto en Producción",
+      description: "Link del producto en producción (si aplica)",
+      icon: "🚀",
+      required: false,
+    },
+    {
+      id: 6,
+      title: "Comparte el Demo en LinkedIn",
+      description: "Muestra a todo el mundo lo que construiste (opcional)",
+      icon: "💼",
+      required: false,
     },
   ];
 
   return (
-    <section className="pb-16 md:pb-28  relative overflow-hidden">
+    <section className="pb-16 md:pb-28 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
@@ -46,7 +63,7 @@ export function EvaluationCriteriaSection() {
               className="text-xs sm:text-sm font-medium tracking-wider uppercase opacity-70"
               style={{ color: "#D9D9D9" }}
             >
-              Evaluación
+              Proceso
             </span>
             <div
               className="w-4 sm:w-6 h-0.5 rounded-full animate-pulse"
@@ -65,7 +82,7 @@ export function EvaluationCriteriaSection() {
                 letterSpacing: "0.02em",
               }}
             >
-              Criterios de{" "}
+              ¿Cómo van a funcionar las{" "}
               <span
                 className="font-bold relative inline-block"
                 style={{
@@ -75,12 +92,13 @@ export function EvaluationCriteriaSection() {
                   letterSpacing: "0.02em",
                 }}
               >
-                Evaluación
+                entregas
                 <div
                   className="absolute -bottom-1 left-0 w-full h-0.5 animate-pulse"
                   style={{ backgroundColor: "#FFDA35", opacity: 0.3 }}
                 />
-              </span>
+              </span>{" "}
+              de los proyectos?
             </h2>
 
             {/* Description */}
@@ -88,54 +106,50 @@ export function EvaluationCriteriaSection() {
               className="text-lg lg:text-xl leading-relaxed font-light max-w-4xl mx-auto px-2 mt-6"
               style={{ color: "#B0B0B0" }}
             >
-              Los mentores son los encargados de filtrar las entregas hasta
-              obtener a un{" "}
+              Cada equipo debe cumplir con los siguientes{" "}
               <span style={{ color: "#FFDA35", fontWeight: "600" }}>
-                top 3 por track
-              </span>
-              . Este top 3 es invitado a presentar frente a los jueces y hacer
-              un pitch en vivo. La estrategia de evaluación es la siguiente: se
-              asigna un{" "}
-              <span style={{ color: "#FFDA35", fontWeight: "600" }}>
-                puntaje del 1 al 5
+                requisitos de entrega
               </span>{" "}
-              para cada uno de los criterios y se calcula un promedio ponderado
-              para la entrega de cada equipo.
+              para participar en la evaluación. Asegúrate de revisar
+              cuidadosamente cada elemento antes de la hora de entrega.
             </p>
           </div>
 
-          {/* Criteria Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {criteria.map((criterion) => (
+          {/* Delivery Requirements Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            {deliveryRequirements.map((requirement) => (
               <div
-                key={criterion.id}
+                key={requirement.id}
                 className="group relative p-4 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-black/20"
                 style={{ backgroundColor: "#000000" }}
               >
-                {/* Icon and Weight */}
+                {/* Icon and Required Badge */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="text-3xl">{criterion.icon}</div>
+                  <div className="text-3xl">{requirement.icon}</div>
                   <div
-                    className="px-3 py-1 rounded-full text-sm font-semibold"
+                    className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                      requirement.required ? "text-red-900" : "text-gray-900"
+                    }`}
                     style={{
-                      backgroundColor: "#FFDA35",
-                      color: "#0C0C0C",
+                      backgroundColor: requirement.required
+                        ? "#FF6B6B"
+                        : "#B0B0B0",
                     }}
                   >
-                    {criterion.weight}
+                    {requirement.required ? "Obligatorio" : "Opcional"}
                   </div>
                 </div>
 
                 {/* Title */}
                 <h3
-                  className="text-xl lg:text-2xl font-semibold mb-1 leading-tight"
+                  className="text-xl lg:text-2xl font-semibold mb-2 leading-tight"
                   style={{
                     color: "#D9D9D9",
                     fontFamily:
                       "NeuePower, -apple-system, BlinkMacSystemFont, sans-serif",
                   }}
                 >
-                  {criterion.title}
+                  {requirement.title}
                 </h3>
 
                 {/* Description */}
@@ -143,7 +157,7 @@ export function EvaluationCriteriaSection() {
                   className="text-base lg:text-lg leading-relaxed"
                   style={{ color: "#B0B0B0" }}
                 >
-                  {criterion.description}
+                  {requirement.description}
                 </p>
 
                 {/* Hover Effect */}
