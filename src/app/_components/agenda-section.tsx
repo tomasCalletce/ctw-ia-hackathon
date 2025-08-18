@@ -37,7 +37,7 @@ export function AgendaSection() {
           type: "deadline",
         },
         {
-          time: "2:00 PM - 2:40 PM",
+          time: "1:50 PM - 2:40 PM",
           title: "Demos",
           description: "Presentación de proyectos finalistas",
           type: "pitch",
