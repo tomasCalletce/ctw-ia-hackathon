@@ -36,7 +36,7 @@ export function WorkshopsSection() {
       date: "Agosto 18",
       embedId: "evt-WuYOuWAOsrUbMQR",
       lumaUrl: "https://lu.ma/xamqoxh2",
-      tag: "Nuevo",
+      recordingUrl: "https://www.youtube.com/watch?v=LMCaoSTZGDM",
     },
     {
       date: "Agosto 19",
