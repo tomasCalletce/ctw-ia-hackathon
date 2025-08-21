@@ -37,13 +37,13 @@ export function AgendaSection() {
           type: "deadline",
         },
         {
-          time: "1:50 PM - 2:40 PM",
+          time: "2:30 p.m. - 3:30 p.m.",
           title: "Demos",
           description: "Presentación de proyectos finalistas",
           type: "pitch",
         },
         {
-          time: "2:40 PM",
+          time: "3:30 p.m.",
           title: "Anuncio de Ganadores",
           description: "Premiación y cierre del evento",
           type: "awards",
