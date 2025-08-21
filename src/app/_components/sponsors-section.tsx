@@ -5,6 +5,11 @@ export function SponsorsSection() {
     { name: "Habi", logo: "/Habi.png", website: "https://habi.co" },
     { name: "V0", logo: "/v0.png", website: "https://v0.dev" },
     {
+      name: "Universidad Sergio Arboleda",
+      logo: "/UNISA.svg",
+      website: "https://www.usergioarboleda.edu.co/",
+    },
+    {
       name: "Supabase",
       logo: "/supabase.png",
       website: "https://supabase.com",
