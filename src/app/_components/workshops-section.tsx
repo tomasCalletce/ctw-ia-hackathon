@@ -83,14 +83,6 @@ export function WorkshopsSection() {
                       className="w-2 h-2 rounded-full"
                       style={{ backgroundColor: "#FFDA35" }}
                     />
-                    {workshop.tag && (
-                      <span
-                        className="ml-2 text-xs font-semibold px-3 py-1 rounded-full"
-                        style={{ backgroundColor: "#FFDA35", color: "#0C0C0C" }}
-                      >
-                        {workshop.tag}
-                      </span>
-                    )}
                     {workshop.recordingUrl && (
                       <a
                         href={workshop.recordingUrl}
