@@ -133,13 +133,13 @@ export function GeneralInformation() {
                   style={{ color: "#FFDA35" }}
                 />
                 <a
-                  href="https://maps.app.goo.gl/4UZ69BveRao7csBF6?g_st=com.google.maps.preview.copy"
+                  href="https://maps.app.goo.gl/zzMAb14yqut3fjyk6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:opacity-90 inline-flex items-center gap-1"
                   style={{ color: "#FFDA35" }}
                 >
-                  Universidad Militar Nueva Granada
+                  Universidad Sergio Arboleda
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </p>
