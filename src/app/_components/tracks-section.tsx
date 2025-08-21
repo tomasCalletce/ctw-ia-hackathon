@@ -29,14 +29,11 @@ export function TracksSection() {
       description:
         "General track for any AI powered app. Build fast and ship fast with v0.",
       examples: [
-        "PR Review efímero con preview en vivo",
-        "Charts on demand",
-        "PDF-to-app instantáneo",
-        "Copy any website with just a link",
-        "Observability coach",
-        "Excalidraw-to-app",
-        "Figma-to-app",
-        "PPT-to-interactive website",
+        "V0 for Business: Crea un negocio con solo un prompt, como las páginas web con v0",
+        "V0 for Slides: Reemplaza PDFs con páginas web interactivas",
+        "V0 for Forms: Crea formularios Typeform con un solo prompt",
+        "V0 for Data Unification: Unifica datos empresariales para agentes AI",
+        "V0 for Interactive Graphs: Widget integrable para crear gráficos con prompts",
       ],
       sponsor: {
         name: "V0",
