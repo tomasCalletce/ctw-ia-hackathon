@@ -1,5 +1,5 @@
 import { Button, buttonVariants } from "~/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Gift } from "lucide-react";
 import Link from "next/link";
 
 export const ApplyNow = () => {
@@ -65,6 +65,24 @@ export const ApplyNow = () => {
           >
             Talleres
             <ArrowRight className="w-4 h-4 ml-2" />
+          </Link>
+          <Link
+            href="/credits"
+            className={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              className:
+                "w-full cursor-pointer max-w-sm font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 group border-2",
+            })}
+            style={{
+              backgroundColor: "transparent",
+              color: "#FFDA35",
+              borderColor: "#FFDA35",
+              backdropFilter: "blur(10px)",
+            }}
+          >
+            Créditos de Patrocinadores
+            <Gift className="w-4 h-4 ml-2" />
           </Link>
           <p
             className="text-sm font-light tracking-wide opacity-70 max-w-xs"
