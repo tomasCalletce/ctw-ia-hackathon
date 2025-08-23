@@ -39,7 +39,7 @@ const credits: Credit[] = [
     id: "openrouter",
     sponsor: "OpenRouter",
     logo: "/openrouter.png",
-    code: "COLOMBIA-TECH-WEEK-2025",
+    code: "COLOMBIA-TECH-WEEK",
     description: "Acceso a modelos de IA premium y APIs",
     instructions: "1. Visita openrouter.ai/redeem\n2. Crea una cuenta si no tienes una\n3. Ingresa el código en la sección de canje\n4. Accede a modelos como GPT-4, Claude y más 🤖",
     redemptionUrl: "https://openrouter.ai/redeem",
